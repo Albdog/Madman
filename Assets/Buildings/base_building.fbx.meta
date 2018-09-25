@@ -1,43 +1,14 @@
 fileFormatVersion: 2
-guid: 5bc71b5dd3fdd564a8bcc2dcdc40b1b8
+guid: 659d010d86bdcf8468de616c8bdac017
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Building A 1st Floor
-    100004: Building B 1st Floor
-    100006: Building C 1st Floor
-    100008: Chem Lab
-    100010: Computer Lab
-    100012: Courtyard
     400000: //RootNode
-    400002: Building A 1st Floor
-    400004: Building B 1st Floor
-    400006: Building C 1st Floor
-    400008: Chem Lab
-    400010: Computer Lab
-    400012: Courtyard
     2100000: Material
     2300000: //RootNode
-    2300002: Building A 1st Floor
-    2300004: Building B 1st Floor
-    2300006: Building C 1st Floor
-    2300008: Chem Lab
-    2300010: Computer Lab
-    2300012: Courtyard
     3300000: //RootNode
-    3300002: Building A 1st Floor
-    3300004: Building B 1st Floor
-    3300006: Building C 1st Floor
-    3300008: Chem Lab
-    3300010: Computer Lab
-    3300012: Courtyard
-    4300000: Courtyard
-    4300002: Building C 1st Floor
-    4300004: Building A 1st Floor
-    4300006: Chem Lab
-    4300008: Computer Lab
-    4300010: Building B 1st Floor
+    4300000: Building A 1st Floor.001
   externalObjects: {}
   materials:
     importMaterials: 1
