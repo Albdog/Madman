@@ -1,14 +1,36 @@
 fileFormatVersion: 2
-guid: fda49c38c2001df4e8ace4d01e15d85d
+guid: 38b894d2f7a85db468f598b79ff552f5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Classroom 1
+    100002: Classroom 1.001
+    100004: Classroom 1.002
+    100006: Classroom 1.003
+    100008: Corridor
+    100010: //RootNode
+    400000: Classroom 1
+    400002: Classroom 1.001
+    400004: Classroom 1.002
+    400006: Classroom 1.003
+    400008: Corridor
+    400010: //RootNode
     2100000: Wall
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Classroom 1
+    2300000: Classroom 1
+    2300002: Classroom 1.001
+    2300004: Classroom 1.002
+    2300006: Classroom 1.003
+    2300008: Corridor
+    3300000: Classroom 1
+    3300002: Classroom 1.001
+    3300004: Classroom 1.002
+    3300006: Classroom 1.003
+    3300008: Corridor
+    4300000: Classroom 1.003
+    4300002: Classroom 1.002
+    4300004: Classroom 1.001
+    4300006: Corridor
+    4300008: Classroom 1
   externalObjects: {}
   materials:
     importMaterials: 1
