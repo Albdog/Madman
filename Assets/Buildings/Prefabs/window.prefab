@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33451747869851850}
   - component: {fileID: 23651643924020064}
   - component: {fileID: 65023906837624294}
+  - component: {fileID: 114884756948128882}
   m_Layer: 0
   m_Name: window
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1980098027770524}
   m_LocalRotation: {x: 0.00000005757589, y: 0.7073383, z: -0.0000000576136, w: 0.7068752}
-  m_LocalPosition: {x: 0.01, y: -0.95, z: -7.446}
+  m_LocalPosition: {x: 1.8392153, y: 0.8921478, z: -7.130419}
   m_LocalScale: {x: 2.2548723, y: 2.3234005, z: 2.3090856}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,3 +97,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.30906096, y: 1.290036, z: 0.9127341}
   m_Center: {x: -0.018482497, y: 0.61951303, z: -0.0006110073}
+--- !u!114 &114884756948128882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980098027770524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24d9be3dbaab0c41bade0e5461260c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bee: {fileID: 1952392112173454, guid: 0a296832e62cfb246a383996f6b06a6c, type: 2}
