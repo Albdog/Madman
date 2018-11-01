@@ -81,12 +81,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
-
-            if(Input.GetKeyDown(KeyCode.Q)) {
-                Vector3 pos = new Vector3(0f, 0.5f, 0f);
-
-                Instantiate(bee, pos, Quaternion.identity);
-            }
         }
 
 
