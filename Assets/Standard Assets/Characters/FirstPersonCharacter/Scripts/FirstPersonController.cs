@@ -42,8 +42,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
-        [SerializeField] private GameObject bee;
-
         // Use this for initialization
         private void Start()
         {
