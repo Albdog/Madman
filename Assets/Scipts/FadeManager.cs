@@ -30,6 +30,7 @@ public class FadeManager : MonoBehaviour {
     }
 
     void Update() {
+        //fix update not being called
         if(!isInTransition) {
             return;
         }
