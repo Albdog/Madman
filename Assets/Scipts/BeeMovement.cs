@@ -5,8 +5,9 @@ using UnityEngine.AI;
 
 public class BeeMovement : MonoBehaviour {
 
+    public float followSpeed;
     private Transform target;
-    public float speed;
+    private float buzzSpeed = 5;
     private Vector3 speedRot = Vector3.right * 50f;
 
     void Start() {
@@ -17,16 +18,25 @@ public class BeeMovement : MonoBehaviour {
     void Update () {
         transform.LookAt(target);
 
-        float targetY = target.position.y + 0.8f;
-        Vector3 head = new Vector3(target.position.x, targetY, target.position.z);
+        if(followSpeed != 0) {
+            float targetY = target.position.y + 0.8f;
+            Vector3 head = new Vector3(target.position.x, targetY, target.position.z);
 
-        transform.position = Vector3.MoveTowards(transform.position, head, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, head, followSpeed * Time.deltaTime);
+        } else {
+
+        }
 	}
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")) {
-            WindowTrigger.totalBees--;
-            Destroy(gameObject);
+            followSpeed = 0;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if(other.CompareTag("Player")) {
+            followSpeed = 5;
         }
     }
 }
