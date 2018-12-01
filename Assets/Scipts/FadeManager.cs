@@ -16,10 +16,8 @@ public class FadeManager : MonoBehaviour {
     private float time;
     private int count = 0;
 
-    void Awake() {
+    void Start() {
         Instance = this;
-        startTime = Time.time;
-        print("awake");
     }
 
     public void Fade(bool showing, float duration) {
@@ -30,22 +28,33 @@ public class FadeManager : MonoBehaviour {
     }
 
     void Update() {
-        //fix update not being called
-        if(!isInTransition) {
-            return;
-        }
-
-        print("update");
+        time = Time.time - startTime;
 
         if(beeContact) {
-            if(time > 6.5f) {
-                print("white");
+            if(time > 7f && isShowing) {
                 Fade(false, 3f);
+
+                GameObject[] bees = GameObject.FindGameObjectsWithTag("Bee");
+                for(int i = 0; i < bees.Length; i++) {
+                    Destroy(bees[i]);
+                    WindowTrigger.totalBees--;
+                }
+
+                SchizoBarManager schizoBar;
+                if(schizoBar = this.GetComponent<SchizoBarManager>()) {
+                    schizoBar.ChangeSchizoLevel(5);
+                }
+
+                beeContact = false;
+                count = 0;
             }
-            else if(time > 5f) {
-                print("black");
+            else if(time > 5f && !isShowing) {
                 Fade(true, 1.5f);
             }
+        }
+
+        if(!isInTransition) {
+            return;
         }
 
         transition += (isShowing) ? Time.deltaTime * (1 / duration) : -Time.deltaTime * (1 / duration);
@@ -61,8 +70,7 @@ public class FadeManager : MonoBehaviour {
 
             count++;
             if(count == 1) {
-                print(count);
-                time = Time.time - startTime;
+                startTime = Time.time;
             }
         }
     }
