@@ -9,10 +9,12 @@ public class WindowTrigger : MonoBehaviour {
     private bool playerEntered = false;
     private int maxBees = 100;
     public static int totalBees;
+    private Animator windowAnimator;
 
     // Use this for initialization
     void Start() {
         totalBees = 0;
+        windowAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,8 @@ public class WindowTrigger : MonoBehaviour {
 
                 totalBees++;
             }
+
+            windowAnimator.SetBool("isOpen", !windowAnimator.GetBool("isOpen"));
         }
     }
 
