@@ -25,7 +25,7 @@ public class VRTouchpadMovement : MonoBehaviour {
         var device = SteamVR_Controller.Input((int) trackedObj.index);
 
         if(controller.GetTouch(touchpad)) {
-            axis = device.GetAxis(.EVRButtonId.k_EButton_Axis0);
+            axis = device.GetAxis(EVRButtonId.k_EButton_Axis0);
 
             if(rig != null) {
                 rig.position += (transform.right * axis.x + transform.forward * axis.y) * Time.deltaTime;
