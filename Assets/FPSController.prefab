@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 54859958444434176}
   - component: {fileID: 82581482818627134}
   - component: {fileID: 65783587623396594}
+  - component: {fileID: 114366323149212540}
+  - component: {fileID: 114051898291916630}
   m_Layer: 0
   m_Name: FPSController
   m_TagString: Player
@@ -55,14 +57,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317581731315184}
-  m_LocalRotation: {x: -0, y: -0.7255863, z: -0, w: 0.68813115}
-  m_LocalPosition: {x: 0.07077777, y: 1.78, z: 13.493609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.89, y: 2.15, z: 0.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4545639272085976}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -93.035, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4545639272085976
 Transform:
   m_ObjectHideFlags: 1
@@ -141,8 +143,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.93966246, z: 1.1402028}
-  m_Center: {x: 7.767721e-11, y: 0.6698139, z: 0.07010126}
+  m_Size: {x: 1, y: 0.93966246, z: 1.311444}
+  m_Center: {x: 0, y: 0.6698139, z: 0.1557219}
 --- !u!81 &81056172047007834
 AudioListener:
   m_ObjectHideFlags: 1
@@ -245,6 +247,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114051898291916630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317581731315184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d3d8150fb64c142ba82732a4e62abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  schizoFill: {fileID: 0}
+  currentSchizoLevel: 0
+  maxSchizoLevel: 100
 --- !u!114 &114317968696081428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,6 +384,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+--- !u!114 &114366323149212540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317581731315184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a314f21fd87ca7e40afeb557ef95724f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeImage: {fileID: 0}
 --- !u!124 &124938947620037362
 Behaviour:
   m_ObjectHideFlags: 1
