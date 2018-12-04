@@ -10,11 +10,19 @@ public class WindowTrigger : MonoBehaviour {
     private int maxBees = 750;
     public static int totalBees;
     private Animator windowAnimator;
+    private Transform window;
 
     // Use this for initialization
     void Start() {
         totalBees = 0;
         windowAnimator = GetComponent<Animator>();
+
+        var children = GetComponentsInChildren<Transform>();
+        foreach(var child in children) {
+            if(child.name == "Window.001") {
+                window = child;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +36,12 @@ public class WindowTrigger : MonoBehaviour {
             while(totalBees < maxBees) {
                 float posX = Random.Range(minPosX, maxPosX);
                 float posY = Random.Range(minPosY, maxPosY);
-                float posZ = gameObject.transform.position.z - 5f;
+                float posZ;
+                if(window.rotation.x < 0) {
+                    posZ = gameObject.transform.position.z - 5f;
+                } else {
+                    posZ = gameObject.transform.position.z + 5f;
+                }
 
                 Vector3 beePos = new Vector3(posX, posY, posZ);
 

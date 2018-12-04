@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3131001d64ca3e42bcb79732477c3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 5
+  followSpeed: 0
 --- !u!137 &137816466111930762
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
