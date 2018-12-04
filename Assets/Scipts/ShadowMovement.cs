@@ -17,7 +17,7 @@ public class ShadowMovement : MonoBehaviour {
         transform.LookAt(target);
 
         float targetY = target.position.y + 0.8f;
-        Vector3 head = new Vector3(target.position.x, targetY, target.position.z);
+        Vector3 head = new Vector3(target.position.x, target.position.y, target.position.z);
 
         transform.position = Vector3.MoveTowards(transform.position, head, speed * Time.deltaTime);
     }
