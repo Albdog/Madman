@@ -1594,6 +1594,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4183162905957694}
   - component: {fileID: 95809989167149254}
+  - component: {fileID: 65199370696873800}
+  - component: {fileID: 114731081786558256}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -4986,7 +4988,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363461589709954}
   m_LocalRotation: {x: -0.000000030908623, y: -0.7071068, z: -0.7071067, w: 0.000000030908616}
-  m_LocalPosition: {x: 0.0031693869, y: -0.0040915343, z: 2.2295473}
+  m_LocalPosition: {x: 0.003169, y: -0.003983, z: 2.226}
   m_LocalScale: {x: -0.00029756705, y: -0.65191466, z: -0.00044830434}
   m_Children:
   - {fileID: 4162798909761374}
@@ -6415,7 +6417,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442240506545110}
   m_LocalRotation: {x: 0.000000030908623, y: 0.7071068, z: 0.7071067, w: 0.000000030908616}
-  m_LocalPosition: {x: 111.909, y: 62.3, z: 41.20131}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -3360.587, y: -2230.6272, z: -1.5339428}
   m_Children:
   - {fileID: 4854055464481166}
@@ -16353,6 +16355,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3913949, y: 1.4971906, z: 1.0325445}
   m_Center: {x: -0.005496338, y: -0.042708904, z: -0.10329556}
+--- !u!65 &65199370696873800
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363461589709954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.438364, y: 3.7685685, z: 0.1842929}
+  m_Center: {x: -0.02271719, y: 1.934388, z: -0.00230373}
 --- !u!65 &65210357019605800
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -16842,7 +16856,7 @@ Animator:
   m_GameObject: {fileID: 1363461589709954}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cdf7edaa7e4bc0b4c9ffe08149402880, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0e7a8a3e93dea84d8f629fee9e973f3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16875,6 +16889,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bee: {fileID: 1952392112173454, guid: 0a296832e62cfb246a383996f6b06a6c, type: 2}
+--- !u!114 &114731081786558256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363461589709954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d171e955a10741a65691091eceee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114933323557459480
 MonoBehaviour:
   m_ObjectHideFlags: 1
