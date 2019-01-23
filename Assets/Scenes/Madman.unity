@@ -3871,7 +3871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &114371449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4829,7 +4829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 67.579, y: -14.979001, z: 13.931001}
 --- !u!1001 &170446882
 Prefab:
@@ -7386,7 +7386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &271684343
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -8737,7 +8737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &338838737
 Transform:
   m_ObjectHideFlags: 0
@@ -12313,7 +12313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &467955356
 Transform:
   m_ObjectHideFlags: 0
@@ -23049,7 +23049,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 5fa469b1484190e49869289279447558, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fa469b1484190e49869289279447558, type: 3}
@@ -31536,7 +31536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1257331021
 Transform:
   m_ObjectHideFlags: 0
@@ -41103,6 +41103,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1128993884872218, guid: f5026e6db086f15448fd0328ceb14bc3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5026e6db086f15448fd0328ceb14bc3, type: 2}
   m_IsPrefabAsset: 0
@@ -43728,7 +43732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1824837140
 Transform:
   m_ObjectHideFlags: 0
@@ -44350,6 +44354,10 @@ Prefab:
     - target: {fileID: 116890, guid: e9a952fff0d5ee546bceadcd5743474e, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 116890, guid: e9a952fff0d5ee546bceadcd5743474e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a952fff0d5ee546bceadcd5743474e, type: 2}
@@ -49677,7 +49685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &2120322595
 Prefab:
