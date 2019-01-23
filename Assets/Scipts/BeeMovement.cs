@@ -6,29 +6,28 @@ using UnityEngine.AI;
 public class BeeMovement : MonoBehaviour {
 
     public float followSpeed;
-    private Transform target;
+    public Transform target;
     private float buzzSpeed = 5;
     private bool isFollowing = true;
     private Vector3 speedRot = Vector3.right * 50f;
 
-    void Start() {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+    private void Start() {
+        target = GameObject.FindGameObjectWithTag("MainCamera").transform;
     }
 
     // Update is called once per frame
     void Update() {
         transform.LookAt(target);
-        float targetY = target.position.y + 0.8f;
 
         if(isFollowing) {
-            Vector3 head = new Vector3(target.position.x, targetY, target.position.z);
+            Vector3 player = target.position;
 
-            transform.position = Vector3.MoveTowards(transform.position, head, followSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, player, followSpeed * Time.deltaTime);
         }
         else {
-            float x = Random.Range(target.position.x - 50f, target.position.x + 50f);
-            float y = Random.Range(targetY - 15f, targetY + 15f);
-            float z = Random.Range(target.position.z - 50f, target.position.z + 50f);
+            float x = Random.Range(target.forward.x - 50f, target.forward.x + 50f);
+            float y = Random.Range(target.forward.y - 15f, target.forward.y + 15f);
+            float z = Random.Range(target.forward.z - 50f, target.forward.z + 50f);
 
             Vector3 flyTo = new Vector3(x, y, z);
 
