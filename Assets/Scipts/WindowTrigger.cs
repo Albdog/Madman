@@ -7,7 +7,7 @@ public class WindowTrigger : MonoBehaviour {
     [SerializeField] private GameObject bee;
 
     private bool playerEntered = false;
-    private int maxBees = 750;
+    private int maxBees = 50;
     public static int totalBees;
     private Animator windowAnimator;
     private Transform window;
