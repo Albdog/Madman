@@ -7,6 +7,7 @@ public class VRTouchpadMovement : MonoBehaviour {
 
     public Transform rig;
     public Transform camera;
+    public float speed;
 
     private EVRButtonId touchpad = EVRButtonId.k_EButton_SteamVR_Touchpad;
 
@@ -31,7 +32,7 @@ public class VRTouchpadMovement : MonoBehaviour {
             axis = device.GetAxis(EVRButtonId.k_EButton_Axis0);
 
             if(rig != null) {
-                rig.position += (camera.transform.right * axis.x + camera.transform.forward * axis.y) * Time.deltaTime;
+                rig.position += (camera.transform.right * axis.x + camera.transform.forward * axis.y) * speed * Time.deltaTime;
                 rig.position = new Vector3(rig.position.x, 0, rig.position.z);
             }
         }
