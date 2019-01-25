@@ -33,7 +33,7 @@ public class VRTouchpadMovement : MonoBehaviour {
 
             if(rig != null) {
                 rig.position += (camera.transform.right * axis.x + camera.transform.forward * axis.y) * speed * Time.deltaTime;
-                rig.position = new Vector3(rig.position.x, 0, rig.position.z);
+                rig.position = new Vector3(rig.position.x, 1.05f, rig.position.z);
             }
         }
 	}
