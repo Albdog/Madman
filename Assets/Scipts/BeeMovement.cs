@@ -7,7 +7,7 @@ public class BeeMovement : MonoBehaviour {
 
     public float followSpeed;
     public Transform target;
-    private float buzzSpeed = 5;
+    private float buzzSpeed = 2.5f;
     private bool isFollowing = true;
     private Vector3 speedRot = Vector3.right * 50f;
 
