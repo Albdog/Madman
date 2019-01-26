@@ -25,9 +25,9 @@ public class BeeMovement : MonoBehaviour {
             transform.position = Vector3.MoveTowards(transform.position, player, followSpeed * Time.deltaTime);
         }
         else {
-            float x = Random.Range(target.forward.x - 50f, target.forward.x + 50f);
-            float y = Random.Range(target.forward.y - 15f, target.forward.y + 15f);
-            float z = Random.Range(target.forward.z - 50f, target.forward.z + 50f);
+            float x = Random.Range(target.position.x - 50f, target.position.x + 50f);
+            float y = Random.Range(target.position.y - 15f, target.position.y + 15f);
+            float z = Random.Range(target.position.z - 50f, target.position.z + 50f);
 
             Vector3 flyTo = new Vector3(x, y, z);
 
