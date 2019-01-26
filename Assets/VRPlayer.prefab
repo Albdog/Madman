@@ -724,8 +724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b47c2980b93bc48844a54641dab5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 1688139205878928, guid: 5f56f13a4dd2144439862dcda4b62103, type: 2}
-  right: {fileID: 1164498001778274, guid: 67802af28ade79745b0f6b9a6a9a8df3, type: 2}
+  left: {fileID: 1504016866368912}
+  right: {fileID: 1174302298443874}
   objects: []
   assignAllBeforeIdentified: 0
 --- !u!114 &114763830826630422
