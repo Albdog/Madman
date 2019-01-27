@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftWindowTrigger : MonoBehaviour {
+public class WindowTrigger : MonoBehaviour {
 
     [SerializeField] private GameObject bee;
 
