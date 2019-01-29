@@ -114,13 +114,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465500171440074}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalRotation: {x: 0.9914449, y: -0, z: 0.13052624, w: 0}
   m_LocalPosition: {x: 0.32700062, y: -0, z: 3.6500003}
   m_LocalScale: {x: 1, y: 0.092850074, z: -0.89223194}
   m_Children: []
   m_Father: {fileID: 4831282701848324}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: -15, z: 0}
 --- !u!4 &4607741680788938
 Transform:
   m_ObjectHideFlags: 1
@@ -140,13 +140,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420875896817832}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalRotation: {x: 0.9914449, y: 0, z: -0.13052616, w: 0}
   m_LocalPosition: {x: -0.30799866, y: -0, z: 3.6500003}
   m_LocalScale: {x: 1, y: 0.09285298, z: -0.89223033}
   m_Children: []
   m_Father: {fileID: 4831282701848324}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 15, z: 0}
 --- !u!4 &4831282701848324
 Transform:
   m_ObjectHideFlags: 1
@@ -154,8 +154,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716322304218788}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -86.378746, y: 13.625103, z: 127.37079}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_LocalPosition: {x: -179.3289, y: 84.59997, z: -42.45186}
+  m_LocalScale: {x: 1.6, y: 1.6000029, z: 1.6000029}
   m_Children:
   - {fileID: 4781628941120642}
   - {fileID: 4572222830227262}
@@ -270,7 +270,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.98383784, g: 1, b: 0.7137255, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -289,7 +289,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -307,7 +307,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.9843137, g: 1, b: 0.7137255, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 8
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -326,7 +326,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -344,7 +344,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.98383784, g: 1, b: 0.7137255, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -363,7 +363,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
