@@ -6,9 +6,12 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Wall
+    2100002: Floor
+    2100004: Exterior Wall
     2300000: //RootNode
     3300000: //RootNode
     4300000: Corridor.005
+    4300002: Corridor.010
   externalObjects: {}
   materials:
     importMaterials: 1

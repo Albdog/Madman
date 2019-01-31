@@ -6,11 +6,35 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Wall
+    2100002: Stairs
+    2100004: Exterior Wall
+    2100006: Floor
     2300000: //RootNode
     3300000: //RootNode
     4300000: Classroom 1.059
+    4300002: Classroom 1.204
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Exterior Wall
+    second: {fileID: 2100000, guid: f7e614e994a11fe42ad1e30bde81205f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: a011de7dc0a87cd40a8fb15e276d9f2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stairs
+    second: {fileID: 2100000, guid: 66907effa83a0ab41bcc9a7fb38e2603, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall
+    second: {fileID: 2100000, guid: 746e83c02ea092442b981faeb535f0cc, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
