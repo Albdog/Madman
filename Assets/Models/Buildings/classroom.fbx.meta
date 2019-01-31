@@ -21,7 +21,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Exterior Wall
-    second: {fileID: 2100002, guid: c5637cfc4afc6684fbe4209bf36d5998, type: 3}
+    second: {fileID: 2100000, guid: f7e614e994a11fe42ad1e30bde81205f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
