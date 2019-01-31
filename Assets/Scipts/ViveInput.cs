@@ -8,6 +8,9 @@ public class ViveInput : MonoBehaviour {
     public SteamVR_TrackedObject trackedObj = null;
     public SteamVR_Controller.Device device;
 
+    private bool doorCollide, windowCollide;
+    public static bool doorActivate, windowActivate;
+
 	// Use this for initialization
 	void Start () {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
@@ -19,11 +22,13 @@ public class ViveInput : MonoBehaviour {
 
         //trigger
         if(device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)) {
-            print("trigger down");
+            if(doorCollide) doorActivate = true;
+            if(windowCollide) windowActivate = true;
         }
 
         if(device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger)) {
-            print("trigger up");
+            if(doorActivate) doorActivate = false;
+            if(windowActivate) windowActivate = false;
         }
 
         Vector2 triggerValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Trigger);
@@ -47,5 +52,15 @@ public class ViveInput : MonoBehaviour {
         }
 
         Vector2 touchValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Door")) doorCollide = true;
+        if(other.CompareTag("Window")) windowCollide = true;
+    }
+
+    void OnTriggerExit(Collider other) {
+        if(other.CompareTag("Door")) doorCollide = false;
+        if(other.CompareTag("Window")) windowCollide = false;
     }
 }

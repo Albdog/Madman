@@ -7,7 +7,7 @@ public class WindowTrigger : MonoBehaviour {
     [SerializeField] private GameObject bee;
 
     private bool playerEntered = false;
-    private int maxBees = 750;
+    private int maxBees = 50;
     public static int totalBees;
     private Animator windowAnimator;
     private Transform window;
@@ -27,7 +27,7 @@ public class WindowTrigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
+        if(playerEntered && ViveInput.windowActivate) {
             float minPosX = gameObject.transform.position.x + 5f;
             float maxPosX = gameObject.transform.position.x - 5f;
             float minPosY = gameObject.transform.position.y + 5f;

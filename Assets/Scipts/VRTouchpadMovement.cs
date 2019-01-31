@@ -6,10 +6,14 @@ using Valve.VR;
 public class VRTouchpadMovement : MonoBehaviour {
 
     public Transform rig;
+    public Transform camera;
+    public float speed;
 
     private EVRButtonId touchpad = EVRButtonId.k_EButton_SteamVR_Touchpad;
+
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device controller {  get { return SteamVR_Controller.Input((int) trackedObj.index);  } }
+
     private Vector2 axis = Vector2.zero;
 
 	void Start () {
@@ -28,8 +32,8 @@ public class VRTouchpadMovement : MonoBehaviour {
             axis = device.GetAxis(EVRButtonId.k_EButton_Axis0);
 
             if(rig != null) {
-                rig.position += (transform.right * axis.x + transform.forward * axis.y) * Time.deltaTime;
-                rig.position = new Vector3(rig.position.x, 0, rig.position.z);
+                rig.position += (camera.transform.right * axis.x + camera.transform.forward * axis.y) * speed * Time.deltaTime;
+                rig.position = new Vector3(rig.position.x, 1.05f, rig.position.z);
             }
         }
 	}
