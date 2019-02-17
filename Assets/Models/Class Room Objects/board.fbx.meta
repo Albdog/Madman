@@ -18,6 +18,8 @@ ModelImporter:
     2000000: Camera
     2100000: Material
     2100002: Wall
+    2100004: Board
+    2100006: Black
     2300000: Classroom 1
     2300002: Cube
     2300004: Cube.001
@@ -30,7 +32,17 @@ ModelImporter:
     4300002: Cube
     4300004: Classroom 1
     10800000: Lamp
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 62a5927e0dbdfdb4c9d86959227dcf92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Board
+    second: {fileID: 2100000, guid: b8ae9bfc14c176f4ca2098eebfc952c0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
