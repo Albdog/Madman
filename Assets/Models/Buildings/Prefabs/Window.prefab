@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 65400104029141288}
   m_Layer: 0
   m_Name: Window
-  m_TagString: Untagged
+  m_TagString: Window
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,9 +224,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1704929990326852}
-  m_LocalRotation: {x: 0.00000006071094, y: 0.7071067, z: -0.00000013466361, w: 0.7071068}
-  m_LocalPosition: {x: 7.21854, y: -1.8606768, z: -9.42216}
-  m_LocalScale: {x: 1, y: 1, z: 1.0649978}
+  m_LocalRotation: {x: 0.5, y: -0.5000001, z: -0.5, w: 0.49999994}
+  m_LocalPosition: {x: 0.0021479998, y: 0.0042239972, z: 1.2130018}
+  m_LocalScale: {x: -0.0004483045, y: -0.65191495, z: -0.00031690815}
   m_Children:
   - {fileID: 4127319075263642}
   - {fileID: 4194846941821610}
