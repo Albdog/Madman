@@ -21,9 +21,12 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
-        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        //[SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        [SerializeField] private AudioClip[] concreteSounds;
+        [SerializeField] private AudioClip[] dirtSounds;
+        [SerializeField] private AudioClip[] grassSounds;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -38,6 +41,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private TerrainDetector terrainDetector;
 
         // Use this for initialization
         private void Start() {
@@ -51,6 +55,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
+            terrainDetector = new TerrainDetector();
         }
 
 
@@ -143,19 +148,38 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             PlayFootStepAudio();
         }
 
+        private AudioClip GetRandomFootStepAudio()
+        {
+            int terrainTextureIndex = terrainDetector.GetActiveTerrainTextureIdx(transform.position);
+
+            switch (terrainTextureIndex)
+            {
+                case 0:
+                    return concreteSounds[UnityEngine.Random.Range(0, concreteSounds.Length)];
+                case 1:
+                    return dirtSounds[UnityEngine.Random.Range(0, dirtSounds.Length)];
+                case 2:
+                default:
+                    return grassSounds[UnityEngine.Random.Range(0, grassSounds.Length)];
+            }
+        }
 
         private void PlayFootStepAudio() {
             if(!m_CharacterController.isGrounded) {
                 return;
             }
+
+            AudioClip clip = GetRandomFootStepAudio();
+            m_AudioSource.PlayOneShot(clip);
+
             // pick & play a random footstep sound from the array,
             // excluding sound at index 0
-            int n = Random.Range(1, m_FootstepSounds.Length);
-            m_AudioSource.clip = m_FootstepSounds[n];
-            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            //int n = Random.Range(1, m_FootstepSounds.Length);
+            //m_AudioSource.clip = m_FootstepSounds[n];
+            //m_AudioSource.PlayOneShot(m_AudioSource.clip);
             // move picked sound to index 0 so it's not picked next time
-            m_FootstepSounds[n] = m_FootstepSounds[0];
-            m_FootstepSounds[0] = m_AudioSource.clip;
+            //m_FootstepSounds[n] = m_FootstepSounds[0];
+            //m_FootstepSounds[0] = m_AudioSource.clip;
         }
 
 
