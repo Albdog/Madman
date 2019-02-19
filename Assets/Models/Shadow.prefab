@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4664930751515276}
   - component: {fileID: 95471992489771564}
-  - component: {fileID: 114013528321498390}
+  - component: {fileID: 114486009639770306}
   - component: {fileID: 65605734173731648}
   - component: {fileID: 54899409343669700}
   - component: {fileID: 198475145652968418}
@@ -214,7 +214,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114013528321498390
+--- !u!114 &114486009639770306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,10 +222,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721302741785620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 500043191419267408a5a72329c36fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d24cdd0b5bb6984aa41edf75a37414d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  updateFrequency: 3
+  teleportRange: 20
+  protectiveRange: 5
 --- !u!198 &198231359493450218
 ParticleSystem:
   m_ObjectHideFlags: 1
