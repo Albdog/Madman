@@ -1,15 +1,30 @@
 fileFormatVersion: 2
-guid: 110006a7ed22100468ec707bd1dd956d
+guid: cb3d6ad5a7074fb41ab6cebe87b46c84
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Box001
+    100002: Camera
+    100004: Lamp
+    100006: //RootNode
+    400000: Box001
+    400002: Camera
+    400004: Lamp
+    400006: //RootNode
+    2000000: Camera
     2100000: 02___Default
-    2300000: //RootNode
-    3300000: //RootNode
+    2300000: Box001
+    2300002: //RootNode
+    3300000: Box001
+    3300002: //RootNode
     4300000: Box001
-  externalObjects: {}
+    10800000: Lamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02___Default
+    second: {fileID: 2100000, guid: cfd994326d624f544accb4ed62bbffbd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
