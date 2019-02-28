@@ -27,6 +27,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         [SerializeField] private AudioClip[] concreteSounds;
         [SerializeField] private AudioClip[] dirtSounds;
         [SerializeField] private AudioClip[] grassSounds;
+        [SerializeField] private GameObject shadow;
 
         private Camera m_Camera;
         private bool m_Jump;
@@ -42,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private TerrainDetector terrainDetector;
+        private bool hasSpawnedShadow;
 
         // Use this for initialization
         private void Start() {
@@ -56,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
             terrainDetector = new TerrainDetector();
+            hasSpawnedShadow = false;
         }
 
 
@@ -229,6 +232,21 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             if(m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0) {
                 StopAllCoroutines();
                 StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
+            }
+
+            //Spawns tester shadow
+            if (Input.GetKeyDown(KeyCode.Alpha1) == true)
+            {
+                if (hasSpawnedShadow)
+                {
+                    Debug.Log("Shadow already spawned!");
+                }
+                else
+                {
+                    Debug.Log("Spawning shadow!");
+                    hasSpawnedShadow = true;
+                    Instantiate(shadow, new Vector3(0, 1.83f, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
+                }
             }
         }
 
