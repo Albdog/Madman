@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class ViveInput : MonoBehaviour {
+public class RightHandInput : MonoBehaviour {
 
     public SteamVR_TrackedObject trackedObj = null;
     public SteamVR_Controller.Device device;

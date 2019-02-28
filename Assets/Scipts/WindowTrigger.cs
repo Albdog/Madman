@@ -27,7 +27,7 @@ public class WindowTrigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(playerEntered && ViveInput.windowActivate) {
+        if(playerEntered && (RightHandInput.windowActivate || LeftHandInput.windowActivate)) {
             float minPosX = gameObject.transform.position.x + 5f;
             float maxPosX = gameObject.transform.position.x - 5f;
             float minPosY = gameObject.transform.position.y + 5f;

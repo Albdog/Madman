@@ -1,48 +1,51 @@
 fileFormatVersion: 2
-guid: b33c84388a69a30449ef53e17b0af30d
+guid: 1a6e27c9c455f3c4580e1917dda0ffc3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Camera
-    100004: Classroom 1
-    100006: Cube
-    100008: Cube.001
-    100010: Lamp
-    400000: //RootNode
-    400002: Camera
-    400004: Classroom 1
-    400006: Cube
-    400008: Cube.001
-    400010: Lamp
-    2000000: Camera
-    2100000: Material
-    2100002: Wall
-    2100004: Board
-    2100006: Black
-    2300000: Classroom 1
-    2300002: Cube
-    2300004: Cube.001
-    2300006: //RootNode
-    3300000: Classroom 1
-    3300002: Cube
-    3300004: Cube.001
-    3300006: //RootNode
-    4300000: Cube.001
-    4300002: Cube
-    4300004: Classroom 1
-    10800000: Lamp
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.001_end
+    100008: Bone.002
+    100010: Bone.002_end
+    100012: Bone_end
+    100014: Sphere
+    100016: Sphere.001
+    100018: //RootNode
+    100020: Point
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.001_end
+    400008: Bone.002
+    400010: Bone.002_end
+    400012: Bone_end
+    400014: Sphere
+    400016: Sphere.001
+    400018: //RootNode
+    400020: Point
+    2100000: No Name
+    2100002: Material
+    4300000: Sphere.001
+    4300002: Sphere
+    7400000: Armature|Close Window
+    7400002: Armature|Closed
+    7400004: Armature|Open Window
+    7400006: Armature|Opened
+    7400008: Armature|Closed Window
+    7400010: Armature|Opened Window
+    9500000: //RootNode
+    10800000: Point
+    13700000: Sphere
+    13700002: Sphere.001
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 62a5927e0dbdfdb4c9d86959227dcf92, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Board
-    second: {fileID: 2100000, guid: b8ae9bfc14c176f4ca2098eebfc952c0, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 5503b13ca10614b478b7703e02045f26, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -93,8 +96,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -119,7 +122,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
