@@ -19,7 +19,7 @@ public class WindowTrigger : MonoBehaviour {
 
         var children = GetComponentsInChildren<Transform>();
         foreach(var child in children) {
-            if(child.name == "Window.001") {
+            if(child.name == "Sphere.001") {
                 window = child;
             }
         }

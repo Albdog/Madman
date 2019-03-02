@@ -63,13 +63,17 @@ public class LeftHandInput : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Door")) doorCollide = true;
+        print("enter");
+        if(other.CompareTag("Door")) {
+            doorCollide = true;
+            print(doorCollide);
+        }
         if(other.CompareTag("Window")) windowCollide = true;
     }
 
     void OnTriggerExit(Collider other) {
         if(other.CompareTag("Door")) doorCollide = false;
-        if(other.CompareTag("Window")) windowCollide = false;
+        if(other.CompareTag("Window")) windowCollide = false; 
     }
 
     private void ModelSwitch() {
