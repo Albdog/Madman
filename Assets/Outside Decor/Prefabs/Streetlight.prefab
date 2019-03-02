@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1465500171440074}
   m_LocalRotation: {x: 0.9914449, y: -0, z: 0.13052624, w: 0}
-  m_LocalPosition: {x: 0.32700062, y: -0, z: 3.6500003}
+  m_LocalPosition: {x: 0.32700062, y: 0, z: 3.3}
   m_LocalScale: {x: 1, y: 0.092850074, z: -0.89223194}
   m_Children: []
   m_Father: {fileID: 4831282701848324}
@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420875896817832}
   m_LocalRotation: {x: 0.9914449, y: 0, z: -0.13052616, w: 0}
-  m_LocalPosition: {x: -0.30799866, y: -0, z: 3.6500003}
+  m_LocalPosition: {x: -0.30799866, y: 0, z: 3.3}
   m_LocalScale: {x: 1, y: 0.09285298, z: -0.89223033}
   m_Children: []
   m_Father: {fileID: 4831282701848324}
@@ -154,8 +154,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716322304218788}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -20.238907, y: 84.59997, z: -42.45186}
-  m_LocalScale: {x: 1.6, y: 1.600001, z: 1.600001}
+  m_LocalPosition: {x: -138.85892, y: 84.59997, z: -42.45186}
+  m_LocalScale: {x: 1.5999999, y: 1.600001, z: 1.600001}
   m_Children:
   - {fileID: 4781628941120642}
   - {fileID: 4572222830227262}
@@ -275,7 +275,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -285,7 +285,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -322,7 +322,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -349,7 +349,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -359,7 +359,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -383,7 +383,7 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: 0.8068079
+  - screenRelativeHeight: 0.053197816
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23448727069026350}
