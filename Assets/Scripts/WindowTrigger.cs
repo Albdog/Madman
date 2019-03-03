@@ -17,6 +17,8 @@ public class WindowTrigger : MonoBehaviour {
         totalBees = 0;
         windowAnimator = GetComponent<Animator>();
 
+        gameObject.tag = "Window";
+
         var children = GetComponentsInChildren<Transform>();
         foreach(var child in children) {
             if(child.name == "Sphere.001") {
