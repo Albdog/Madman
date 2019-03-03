@@ -37,10 +37,10 @@ public class FadeManager : MonoBehaviour {
                     WindowTrigger.totalBees--;
                 }
 
-                //SchizoBarManager schizoBar;
-                //if(schizoBar = this.GetComponent<SchizoBarManager>()) {
-                //    schizoBar.ChangeSchizoLevel(5);
-                //}
+                SchizoBarManager schizoBar;
+                if(schizoBar = this.GetComponent<SchizoBarManager>()) {
+                    schizoBar.ChangeSchizoLevel(5);
+                }
 
                 beeContact = false;
                 count = 0;
