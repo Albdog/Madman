@@ -16,10 +16,6 @@ public class DoorTrigger : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if(playerEntered && (RightHandInput.doorActivate || LeftHandInput.doorActivate)) {
-            float minPosX = gameObject.transform.position.x + 5f;
-            float maxPosX = gameObject.transform.position.x - 5f;
-            float minPosY = gameObject.transform.position.y + 5f;
-            float maxPosY = gameObject.transform.position.y + 0.1f;
             bool isOpen = doorAnimator.GetBool("isOpen");
 
             doorAnimator.SetBool("isOpen", !isOpen);
