@@ -6,9 +6,12 @@ public class TableInteraction : MonoBehaviour {
 
     private BoxCollider boxCollider;
     private GameObject chair;
+    private bool playerEntered = false;
+    private bool moveChair = false;
+    private Vector3 original;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         gameObject.tag = "TableAndChair";
 
         boxCollider = GetComponent<BoxCollider>();
@@ -26,14 +29,34 @@ public class TableInteraction : MonoBehaviour {
                 child.parent = chair.transform;
             }
         }
+        original = new Vector3(chair.transform.position.x, chair.transform.position.y, chair.transform.position.z);
 
         Vector3 moveTo = new Vector3(chair.transform.position.x + 1.25f, chair.transform.position.y, chair.transform.position.z);
 
-        chair.transform.position = Vector3.MoveTowards(chair.transform.position, moveTo, 0f);
+        chair.transform.position = Vector3.MoveTowards(chair.transform.position, moveTo, 10f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if(playerEntered && (RightHandInput.tableActivate || LeftHandInput.tableActivate)) {
+            boxCollider.center = new Vector3(-0.005496f, -0.042708f, -0.103295f);
+            boxCollider.size = new Vector3(1.391395f, 1.497191f, 1.032544f);
+            
+            moveChair = true;
+        }
+
+        if(moveChair) {
+            chair.transform.position = Vector3.MoveTowards(chair.transform.position, original, 2.5f * Time.deltaTime);
+
+            if(chair.transform.position == original) moveChair = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        playerEntered = true;
+    }
+
+    void OnTriggerExit(Collider other) {
+        playerEntered = false;
+    }
 }
