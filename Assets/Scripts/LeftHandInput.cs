@@ -10,6 +10,7 @@ public class LeftHandInput : MonoBehaviour {
 
     public GameObject leftHand;
     public GameObject flashlight;
+    public GameObject phone;
 
     private int modelNumber;
 
@@ -19,9 +20,9 @@ public class LeftHandInput : MonoBehaviour {
     // Use this for initialization
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-
-        modelNumber = 0;
+        
         flashlight.SetActive(false);
+        phone.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,23 +46,37 @@ public class LeftHandInput : MonoBehaviour {
 
         //grip
         if(device.GetPressDown(SteamVR_Controller.ButtonMask.Grip)) {
-            ModelSwitch();
+            //ModelSwitch();
         }
 
         if(device.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) {
             print("grip up");
         }
 
+        Vector2 touchValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
+
         //touchpad
         if(device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad)) {
-            print("touchpad down");
+            float x = touchValue.x;
+            float y = touchValue.y;
+
+            float newX = (x - y) / Mathf.Sqrt(2);
+            float newY = (x + y) / Mathf.Sqrt(2);
+
+            if(newX >= 0) {
+                if(newY >= 0) ModelSwitch(0); //right
+                else print("other"); //down
+            } else {
+                if(newY >= 0) ModelSwitch(1); //up
+                else ModelSwitch(2); //left
+            }
         }
 
         if(device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad)) {
-            print("touchpad up");
+            //print("touchpad up");
         }
 
-        Vector2 touchValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
+        
     }
 
     void OnTriggerEnter(Collider other) {
@@ -76,16 +91,19 @@ public class LeftHandInput : MonoBehaviour {
         if(other.CompareTag("TableAndChair")) tableCollide = false;
     }
 
-    private void ModelSwitch() {
-        if(modelNumber == 0) {
-            leftHand.SetActive(false);
-            flashlight.SetActive(true);
-            modelNumber = 1;
-        }
-        else if(modelNumber == 1) {
+    private void ModelSwitch(int area) {
+        if(area == 0) { //hand
             leftHand.SetActive(true);
             flashlight.SetActive(false);
-            modelNumber = 0;
+            phone.SetActive(false);
+        } else if(area == 1) { //flash light
+            leftHand.SetActive(false);
+            flashlight.SetActive(true);
+            phone.SetActive(false);
+        } else if(area == 2) { //phone
+            leftHand.SetActive(false);
+            flashlight.SetActive(false);
+            phone.SetActive(true);
         }
     }
 }
