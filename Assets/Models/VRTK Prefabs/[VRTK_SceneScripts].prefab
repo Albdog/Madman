@@ -213,8 +213,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293299982762492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.174157, y: 1.8129511, z: -1.4018911}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -104.139114, y: 1.02, z: -59.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4989017611568604}
@@ -224,7 +224,7 @@ Transform:
   - {fileID: 4796605780992214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4565466143133922
 Transform:
   m_ObjectHideFlags: 1
@@ -292,10 +292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectControlScript: {fileID: 114604958630859394}
   listenOnAxisChange: 1
-  maximumSpeed: 3
+  maximumSpeed: 5
   deceleration: 0.1
   fallingDeceleration: 0.01
-  speedMultiplier: 1.5
+  speedMultiplier: 2
   bodyPhysics: {fileID: 114720307038143502}
 --- !u!114 &114165379781707376
 MonoBehaviour:
@@ -330,10 +330,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectControlScript: {fileID: 114604958630859394}
   listenOnAxisChange: 0
-  maximumSpeed: 3
+  maximumSpeed: 5
   deceleration: 0.1
   fallingDeceleration: 0.01
-  speedMultiplier: 1.5
+  speedMultiplier: 2
   bodyPhysics: {fileID: 114720307038143502}
 --- !u!114 &114200463363002638
 MonoBehaviour:

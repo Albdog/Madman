@@ -8,11 +8,11 @@ public class RightHandInput : MonoBehaviour {
     public SteamVR_TrackedObject trackedObj = null;
     public SteamVR_Controller.Device device;
 
-    private bool doorCollide, windowCollide;
-    public static bool doorActivate, windowActivate;
+    private bool doorCollide, windowCollide, tableCollide;
+    public static bool doorActivate, windowActivate, tableActivate;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
@@ -24,11 +24,13 @@ public class RightHandInput : MonoBehaviour {
         if(device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger)) {
             if(doorCollide) doorActivate = true;
             if(windowCollide) windowActivate = true;
+            if(tableCollide) tableActivate = true;
         }
 
         if(device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger)) {
             if(doorActivate) doorActivate = false;
             if(windowActivate) windowActivate = false;
+            if(tableActivate) tableActivate = false;
         }
 
         Vector2 triggerValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Trigger);
@@ -57,10 +59,12 @@ public class RightHandInput : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Door")) doorCollide = true;
         if(other.CompareTag("Window")) windowCollide = true;
+        if(other.CompareTag("TableAndChair")) tableCollide = true;
     }
 
     void OnTriggerExit(Collider other) {
         if(other.CompareTag("Door")) doorCollide = false;
         if(other.CompareTag("Window")) windowCollide = false;
+        if(other.CompareTag("TableAndChair")) tableCollide = false;
     }
 }
