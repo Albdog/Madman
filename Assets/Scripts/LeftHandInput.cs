@@ -14,8 +14,8 @@ public class LeftHandInput : MonoBehaviour {
 
     private int modelNumber;
 
-    private bool doorCollide, windowCollide, tableCollide;
-    public static bool doorActivate, windowActivate, tableActivate;
+    private bool doorCollide, windowCollide, tableCollide, mainSwitchCollide, fuseBoxCollide;
+    public static bool doorActivate, windowActivate, tableActivate, mainSwitchActivate, fuseBoxActivate;
 
     // Use this for initialization
     void Start() {
@@ -34,28 +34,31 @@ public class LeftHandInput : MonoBehaviour {
             if(doorCollide) doorActivate = true;
             if(windowCollide) windowActivate = true;
             if(tableCollide) tableActivate = true;
+            if(mainSwitchCollide) mainSwitchActivate = true;
+            if(fuseBoxCollide) fuseBoxActivate = true;
         }
 
         if(device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger)) {
             if(doorActivate) doorActivate = false;
             if(windowActivate) windowActivate = false;
             if(tableActivate) tableActivate = false;
+            if(mainSwitchCollide) mainSwitchActivate = false;
+            if(fuseBoxCollide) fuseBoxActivate = false;
         }
 
         Vector2 triggerValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Trigger);
 
         //grip
         if(device.GetPressDown(SteamVR_Controller.ButtonMask.Grip)) {
-            //ModelSwitch();
+            
         }
 
         if(device.GetPressUp(SteamVR_Controller.ButtonMask.Grip)) {
-            print("grip up");
+           
         }
 
         Vector2 touchValue = device.GetAxis(EVRButtonId.k_EButton_SteamVR_Touchpad);
 
-        //touchpad
         if(device.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad)) {
             float x = touchValue.x;
             float y = touchValue.y;
@@ -73,7 +76,7 @@ public class LeftHandInput : MonoBehaviour {
         }
 
         if(device.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad)) {
-            //print("touchpad up");
+
         }
 
         
@@ -83,12 +86,16 @@ public class LeftHandInput : MonoBehaviour {
         if(other.CompareTag("Door")) doorCollide = true;
         if(other.CompareTag("Window")) windowCollide = true;
         if(other.CompareTag("TableAndChair")) tableCollide = true;
+        if(other.CompareTag("Main Switch")) mainSwitchCollide = true;
+        if(other.CompareTag("Outside Fuse Box") || other.CompareTag("Middle Building Fuse Box") || other.CompareTag("Left Wing Fuse Box") || other.CompareTag("Right Wing Fuse Box")) fuseBoxCollide = true;
     }
 
     void OnTriggerExit(Collider other) {
         if(other.CompareTag("Door")) doorCollide = false;
         if(other.CompareTag("Window")) windowCollide = false;
         if(other.CompareTag("TableAndChair")) tableCollide = false;
+        if(other.CompareTag("Main Switch")) mainSwitchCollide = false;
+        if(other.CompareTag("Outside Fuse Box") || other.CompareTag("Middle Building Fuse Box") || other.CompareTag("Left Wing Fuse Box") || other.CompareTag("Right Wing Fuse Box")) fuseBoxCollide = false;
     }
 
     private void ModelSwitch(int area) {

@@ -8,6 +8,12 @@ TagManager:
   - Door
   - Window
   - TableAndChair
+  - Fire
+  - Main Switch
+  - Outside Fuse Box
+  - Left Wing Fuse Box
+  - Right Wing Fuse Box
+  - Middle Building Fuse Box
   layers:
   - Default
   - TransparentFX
