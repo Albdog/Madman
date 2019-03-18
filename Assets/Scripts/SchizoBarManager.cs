@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SchizoBarManager : MonoBehaviour {
 
     public Slider schizoFill;
-    public float currentSchizoLevel;
+    private float currentSchizoLevel;
     public float maxSchizoLevel;
 
     public void ChangeSchizoLevel(int amount) {
@@ -14,5 +14,10 @@ public class SchizoBarManager : MonoBehaviour {
         currentSchizoLevel = Mathf.Clamp(currentSchizoLevel, 0, maxSchizoLevel);
 
         schizoFill.value = currentSchizoLevel / maxSchizoLevel;
+    }
+
+    public float getSchizoLevel ()
+    {
+        return currentSchizoLevel;
     }
 }
