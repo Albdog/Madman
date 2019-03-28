@@ -1,32 +1,41 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShadowPositioner : MonoBehaviour
 {
 
     private GameObject player;
+    private SchizoBarManager schizoBarManager;
+    //private WeightedRandomizer weightedRandomizer;
+
+    [SerializeField] public float[] updateFrequencies;
+    [SerializeField] public float[] teleportRanges;
+    [SerializeField] public float[] protectiveRanges;
+    [SerializeField] public BoxCollider[] schoolColliders;
+    [SerializeField] public float[] levelHeights;
     private bool isColliding;
-    [SerializeField] public float updateFrequency;
-    [SerializeField] public float teleportRange;
-    [SerializeField] public float protectiveRange;
-    private float groundLevelHeight;
+    private bool isPlayerOutside;
+    private bool isShadowOutside;
 
     // Use this for initialization
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        schizoBarManager = player.GetComponent<SchizoBarManager>();
         isColliding = false;
+        isPlayerOutside = true;
+        isShadowOutside = true;
         StartCoroutine(UpdatePosition());
-        groundLevelHeight = 1.8369f; //y-position if person is on ground level
+        //weightedRandomizer = new WeightedRandomizer();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.LookAt(player.transform);
+        CheckIfPlayerIsOutside();
     }
-
+    
     private IEnumerator UpdatePosition()
     {
         while (true)
@@ -35,13 +44,16 @@ public class ShadowPositioner : MonoBehaviour
             do
             {
                 SetNewPosition();
-            } while (isColliding);
-
+                CheckIfPlayerIsOutside();
+                CheckIfShadowIsOutside();
+            } while ( isColliding || (isPlayerOutside != isShadowOutside) );
+            
+            //dont do it when isColliding || 
             //TODO
             //Obscure shadow from view before moving
 
-            //wait for updateFrequency seconds
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(updateFrequencies[isPlayerOutside ? 0 : 1]); 
+            //yield return new WaitForSeconds(3.0f);
         }
     }
 
@@ -49,42 +61,46 @@ public class ShadowPositioner : MonoBehaviour
     {
         //get player position
         Vector3 playerPos = player.transform.position;
-
-        //set shadow to be same y as player
-        if (playerPos.y <= groundLevelHeight) //checks if player is on ground level
-        {
-            this.gameObject.transform.position = new Vector3(
-            playerPos.x + Random.Range(protectiveRange, teleportRange) * ((Random.Range(0, 2) == 0) ? 1 : -1),
-            playerPos.y,
-            playerPos.z + Random.Range(protectiveRange, teleportRange) * ((Random.Range(0, 2) == 0) ? 1 : -1)
-            );
-        }
-        else //player is above ground level, assumes that player is inside building
-        {
-            //if player is in hallway
-            // 30% chance shadow is in hallway
-            // 85% chance shadow is behind
-            // 15% shadow is front
-            // 70% chance shadow is in classroom
-            //if player is in classroom
-            //
-        }
-
+        
+        this.gameObject.transform.position = new Vector3(
+        playerPos.x + Random.Range(protectiveRanges[isPlayerOutside ? 0 : 1], teleportRanges[isPlayerOutside ? 0 : 1]) * ((Random.Range(0, 2) == 0) ? 1 : -1),
+        playerPos.y,
+        playerPos.z + Random.Range(protectiveRanges[isPlayerOutside ? 0 : 1], teleportRanges[isPlayerOutside ? 0 : 1]) * ((Random.Range(0, 2) == 0) ? 1 : -1)
+        );
     }
 
-    public
-
-    bool IsPlayerGrounded()
+    void CheckIfPlayerIsOutside()
     {
-        if (player.transform.position.y <= 1.83) // is on ground
+        bool tempVar = true;
+        foreach (BoxCollider b in schoolColliders)
         {
-            return true;
+            if (b.GetComponent<SchoolTrigger>().IsPlayerInside())
+            {
+                tempVar = false;
+                break;
+            }
         }
-        return false;
+        isPlayerOutside = tempVar;
+    }
+
+    void CheckIfShadowIsOutside()
+    {
+        bool tempVar = true;
+        foreach (BoxCollider b in schoolColliders)
+        {
+            if (b.bounds.Contains(transform.position))
+            {
+                tempVar = false;
+                break;
+            }
+        }
+        isShadowOutside = tempVar;
     }
 
     void OnCollisionEnter()
     {
+        //activates when shadow is colliding with another object
+        //boolean is used for making sure that shadow does not spawn in weird places
         isColliding = true;
     }
 
@@ -92,4 +108,40 @@ public class ShadowPositioner : MonoBehaviour
     {
         isColliding = false;
     }
+
+    /*
+     * Only helper functions below. :--)
+     
+    private class Option
+    {
+        private int chance;
+        private string name;
+
+        public Option(string x, int y)
+        {
+            name = x;
+            chance = y;
+        }
+
+        public string getName() { return name; }
+        public void setName(string newName) { name = newName; }
+        public int getChance() { return chance; }
+        public void setChance(int newChance) { chance = newChance; }
+    }
+
+    private class WeightedRandomizer
+    {
+        public void updateWeights (float currentSchizoLevel)
+        {
+            //TODO set adjusting weights algo
+        }
+
+        public string Randomize(Option[] options)
+        {
+            int randomInt = Random.Range(0, 101);
+
+            return "x";
+        }
+    }
+    */
 }

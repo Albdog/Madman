@@ -14,6 +14,7 @@ TagManager:
   - Left Wing Fuse Box
   - Right Wing Fuse Box
   - Middle Building Fuse Box
+  - Shadow
   layers:
   - Default
   - TransparentFX

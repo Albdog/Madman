@@ -37,14 +37,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4664930751515276}
   - component: {fileID: 95471992489771564}
-  - component: {fileID: 114486009639770306}
   - component: {fileID: 65605734173731648}
-  - component: {fileID: 54899409343669700}
   - component: {fileID: 198475145652968418}
   - component: {fileID: 199893502378507442}
+  - component: {fileID: 114114308166752084}
   m_Layer: 0
   m_Name: Shadow
-  m_TagString: Untagged
+  m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721302741785620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.709058, y: 1.834, z: -1.6725968}
+  m_LocalPosition: {x: -108.074455, y: 1.8952776, z: -59.820534}
   m_LocalScale: {x: 0.18181176, y: 0.18181176, z: 0.4}
   m_Children:
   - {fileID: 4362778143188692}
@@ -169,21 +168,6 @@ Transform:
   m_Father: {fileID: 4664930751515276}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54899409343669700
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1721302741785620}
-  serializedVersion: 2
-  m_Mass: 10000
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 32
-  m_CollisionDetection: 0
 --- !u!65 &65605734173731648
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -203,7 +187,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721302741785620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 1a4f7ca67cc63f344b4ecd2c09590b82, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
@@ -214,7 +198,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114486009639770306
+--- !u!114 &114114308166752084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,12 +206,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721302741785620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d24cdd0b5bb6984aa41edf75a37414d, type: 3}
+  m_Script: {fileID: 11500000, guid: b0bdb1cdd5e85c047a76740bb666ac97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateFrequency: 3
-  teleportRange: 20
-  protectiveRange: 5
+  updateFrequencies:
+  - 3
+  - 3
+  teleportRanges:
+  - 41
+  - 22.15
+  protectiveRanges:
+  - 20
+  - 13.15
+  schoolColliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  levelHeights:
+  - 1.8368
+  - 8.6401
+  - 15.44
+  - 22.24
 --- !u!198 &198231359493450218
 ParticleSystem:
   m_ObjectHideFlags: 1
