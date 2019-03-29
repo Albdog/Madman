@@ -43,7 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private TerrainDetector terrainDetector;
-        private bool hasSpawnedShadow;
+        public bool enabledShadowMovement;
 
         // Use this for initialization
         private void Start() {
@@ -58,7 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
             terrainDetector = new TerrainDetector();
-            hasSpawnedShadow = false;
+            enabledShadowMovement = false;
         }
 
 
@@ -237,15 +237,14 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             //Spawns tester shadow
             if (Input.GetKeyDown(KeyCode.Alpha1) == true)
             {
-                if (hasSpawnedShadow)
+                if (enabledShadowMovement)
                 {
                     Debug.Log("Shadow already spawned!");
                 }
                 else
                 {
                     Debug.Log("Spawning shadow!");
-                    hasSpawnedShadow = true;
-                    Instantiate(shadow, new Vector3(0, 1.83f, 0), Quaternion.Euler(new Vector3(0, 90, 0)));
+                    enabledShadowMovement = true;
                 }
             }
         }

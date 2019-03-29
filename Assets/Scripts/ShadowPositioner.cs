@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class ShadowPositioner : MonoBehaviour
 {
 
     private GameObject player;
     private SchizoBarManager schizoBarManager;
-    //private WeightedRandomizer weightedRandomizer;
+    private FirstPersonController fps;
 
     [SerializeField] public float[] updateFrequencies;
     [SerializeField] public float[] teleportRanges;
@@ -16,16 +17,18 @@ public class ShadowPositioner : MonoBehaviour
     private bool isColliding;
     private bool isPlayerOutside;
     private bool isShadowOutside;
+    private bool hasStarted;
 
     // Use this for initialization
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         schizoBarManager = player.GetComponent<SchizoBarManager>();
+        fps = player.GetComponent<FirstPersonController>();
         isColliding = false;
         isPlayerOutside = true;
         isShadowOutside = true;
-        StartCoroutine(UpdatePosition());
+        hasStarted = false;
         //weightedRandomizer = new WeightedRandomizer();
     }
 
@@ -34,6 +37,11 @@ public class ShadowPositioner : MonoBehaviour
     {
         transform.LookAt(player.transform);
         CheckIfPlayerIsOutside();
+        if (fps.enabledShadowMovement && !hasStarted)
+        {
+            StartCoroutine(UpdatePosition());
+            hasStarted = true;
+        }
     }
     
     private IEnumerator UpdatePosition()
