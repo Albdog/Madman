@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SchizoBarManager : MonoBehaviour {
 
@@ -19,5 +20,13 @@ public class SchizoBarManager : MonoBehaviour {
     public float getSchizoLevel ()
     {
         return currentSchizoLevel;
+    }
+
+    void Update() {
+        if(currentSchizoLevel >= maxSchizoLevel) {
+            GameState.isGameOver = true;
+            GameState.isGameOver = false;
+            SceneManager.LoadScene(0);
+        }
     }
 }
