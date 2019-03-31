@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainSwitchInteraction : MonoBehaviour {
 
@@ -17,14 +18,19 @@ public class MainSwitchInteraction : MonoBehaviour {
         //FOR VR
         //if(playerEntered && (LeftHandInput.mainSwitchActivate || RightHandInput.mainSwitchActivate) && (!isDisabled)) isDisabled = true;
 
-        //if(playerEntered && (LeftHandInput.mainSwitchActivate || RightHandInput.mainSwitchActivate) && PhoneManager.isLeftWingComplete && PhoneManager.isMiddleBuildingComplete && PhoneManager.isRightWingComplete && PhoneManager.isOutsideComplete) isDisabled = false;
-
+        //if(playerEntered && (LeftHandInput.mainSwitchActivate || RightHandInput.mainSwitchActivate) && GameState.areFuseBoxesFixed) {
+        //    GameState.isGameOver = true;
+        //    GameState.isWin = true;
+        //}
 
         if(playerEntered && Input.GetKeyUp(KeyCode.F) && (!isDisabled)) isDisabled = true;
 
-        if(playerEntered && (LeftHandInput.mainSwitchActivate || RightHandInput.mainSwitchActivate) && PhoneManager.isLeftWingComplete && PhoneManager.isMiddleBuildingComplete && PhoneManager.isRightWingComplete && PhoneManager.isOutsideComplete) isDisabled = false;
+        if(playerEntered && Input.GetKeyUp(KeyCode.F) && GameState.areFuseBoxesFixed) {
+            GameState.isGameOver = true;
+            GameState.isWin = true;
+            SceneManager.LoadScene(0);
+        }
     }
-
 
     void OnTriggerEnter(Collider other) {
         playerEntered = true;
