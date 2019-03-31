@@ -32114,6 +32114,11 @@ Prefab:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114894185747874248, guid: 76800ad755145d24a8d3f34bbde15485,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76800ad755145d24a8d3f34bbde15485, type: 2}
   m_IsPrefabAsset: 0
