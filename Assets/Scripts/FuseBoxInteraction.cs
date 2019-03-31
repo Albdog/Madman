@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FuseBoxInteraction : MonoBehaviour {
 
-    private bool isFixed;
+    private bool isFixed, playerEntered;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,9 @@ public class FuseBoxInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(MainSwitchInteraction.isDisabled) {
-            if((LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) {
+            //FOR VR
+            //if((LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) { 
+            if(playerEntered && Input.GetKeyUp(KeyCode.F) && !isFixed) {
                 switch(gameObject.tag) {
                 case "Outside Fuse Box":
                     if(PhoneManager.outsideFBcount < 2) PhoneManager.outsideFBcount++;
@@ -40,4 +42,12 @@ public class FuseBoxInteraction : MonoBehaviour {
             }
         }
 	}
+
+    void OnTriggerEnter(Collider other) {
+        playerEntered = true;
+    }
+
+    void OnTriggerExit(Collider other) {
+        playerEntered = false;
+    }
 }

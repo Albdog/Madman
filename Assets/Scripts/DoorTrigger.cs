@@ -15,7 +15,9 @@ public class DoorTrigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if(playerEntered && (RightHandInput.doorActivate || LeftHandInput.doorActivate)) {
+        //FOR VR
+        //if(playerEntered && (RightHandInput.doorActivate || LeftHandInput.doorActivate)) {
+        if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
             bool isOpen = doorAnimator.GetBool("isOpen");
 
             doorAnimator.SetBool("isOpen", !isOpen);
