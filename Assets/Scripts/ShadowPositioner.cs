@@ -18,6 +18,7 @@ public class ShadowPositioner : MonoBehaviour
     private bool isPlayerOutside;
     private bool isShadowOutside;
     private bool hasStarted;
+    private bool enableMovement;
 
     // Use this for initialization
     void Awake()
@@ -29,6 +30,7 @@ public class ShadowPositioner : MonoBehaviour
         isPlayerOutside = true;
         isShadowOutside = true;
         hasStarted = false;
+        enableMovement = true;
         //weightedRandomizer = new WeightedRandomizer();
     }
 
@@ -48,20 +50,23 @@ public class ShadowPositioner : MonoBehaviour
     {
         while (true)
         {
-            //update its position
-            do
+            if (enableMovement)
             {
-                SetNewPosition();
-                CheckIfPlayerIsOutside();
-                CheckIfShadowIsOutside();
-            } while ( isColliding || (isPlayerOutside != isShadowOutside) );
-            
-            //dont do it when isColliding || 
-            //TODO
-            //Obscure shadow from view before moving
+                //update its position
+                do
+                {
+                    SetNewPosition();
+                    CheckIfPlayerIsOutside();
+                    CheckIfShadowIsOutside();
+                } while (isColliding || (isPlayerOutside != isShadowOutside));
 
-            yield return new WaitForSeconds(updateFrequencies[isPlayerOutside ? 0 : 1]); 
-            //yield return new WaitForSeconds(3.0f);
+                //dont do it when isColliding || 
+                //TODO
+                //Obscure shadow from view before moving
+
+                yield return new WaitForSeconds(updateFrequencies[isPlayerOutside ? 0 : 1]);
+                //yield return new WaitForSeconds(3.0f);
+            }
         }
     }
 
@@ -76,6 +81,7 @@ public class ShadowPositioner : MonoBehaviour
         playerPos.z + Random.Range(protectiveRanges[isPlayerOutside ? 0 : 1], teleportRanges[isPlayerOutside ? 0 : 1]) * ((Random.Range(0, 2) == 0) ? 1 : -1)
         );
     }
+
 
     void CheckIfPlayerIsOutside()
     {
@@ -103,6 +109,27 @@ public class ShadowPositioner : MonoBehaviour
             }
         }
         isShadowOutside = tempVar;
+    }
+
+    public void RemoveFromView()
+    {
+        Vector3 playerPos = player.transform.position;
+
+        this.gameObject.transform.position = new Vector3(
+        playerPos.x + Random.Range(protectiveRanges[isPlayerOutside ? 0 : 1], teleportRanges[isPlayerOutside ? 0 : 1]) * ((Random.Range(0, 2) == 0) ? 1 : -1),
+        -30,
+        playerPos.z + Random.Range(protectiveRanges[isPlayerOutside ? 0 : 1], teleportRanges[isPlayerOutside ? 0 : 1]) * ((Random.Range(0, 2) == 0) ? 1 : -1)
+        );
+    }
+
+    public void EnableMovement()
+    {
+        enableMovement = true;
+    }
+
+    public void DisableMovement()
+    {
+        enableMovement = false;
     }
 
     void OnCollisionEnter()
