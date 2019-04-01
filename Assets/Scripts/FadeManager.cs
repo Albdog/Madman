@@ -72,6 +72,7 @@ public class FadeManager : MonoBehaviour {
                 {
                     shadow.DisableMovement();
                     shadow.RemoveFromView();
+                    schizoBar.ChangeSchizoLevel(5);
                 }
             }
             else if (time > 3f)
