@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.PostProcessing;
 
-public class PostProcessingTransition : MonoBehaviour
+public class ShadowEffects : MonoBehaviour
 {
     [SerializeField] public PostProcessingProfile profile;
     private GameObject player;
     private GameObject shadow;
+    private SchizoBarManager schizoBar;
 
     private ChromaticAberrationModel.Settings chrome;
     private GrainModel.Settings grain;
@@ -16,6 +17,7 @@ public class PostProcessingTransition : MonoBehaviour
     //const float MAX_TRANSITION_TIME = 2.0f;
     //private float timer;
     private bool isNearToShadow;
+    private Vector2 damageRange = new Vector2(0.0095f, 0.2f);
 
     private static class PPVRanges
     {
@@ -33,6 +35,7 @@ public class PostProcessingTransition : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         shadow = GameObject.FindGameObjectWithTag("Shadow");
+        schizoBar = player.GetComponent<SchizoBarManager>();
         GetNewReferences();
         //isNearToShadow = false;
         //timer = 0;
@@ -47,11 +50,17 @@ public class PostProcessingTransition : MonoBehaviour
         {
             lerp = 1 - (distance / MIN_DISTANCE);
             //Debug.Log(lerp);
+            if ( lerp > 0.3f )
+            {
+                float damageLerp = (lerp - 0.3f) / 0.7f;
+                schizoBar.ChangeSchizoLevel(Mathf.Lerp(damageRange.x, damageRange.y, damageLerp));
+            }
         }
 
         GetNewReferences(); //gets the current value from main profile
         LerpAllValues(lerp); //accepts current lerp value and changes vision accordingly
         UpdateNewReferences(); //sets the values in main profile to new settings
+        Debug.Log(schizoBar.GetSchizoLevel());
     }
 
     //TODO smooth function?
