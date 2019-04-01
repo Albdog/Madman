@@ -8525,6 +8525,16 @@ Prefab:
       propertyPath: m_Center.y
       value: -1.34
       objectReference: {fileID: 0}
+    - target: {fileID: 114871299577633222, guid: f5026e6db086f15448fd0328ceb14bc3,
+        type: 2}
+      propertyPath: m_RunSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114871299577633222, guid: f5026e6db086f15448fd0328ceb14bc3,
+        type: 2}
+      propertyPath: m_WalkSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 54704620002434224, guid: f5026e6db086f15448fd0328ceb14bc3, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f5026e6db086f15448fd0328ceb14bc3, type: 2}
