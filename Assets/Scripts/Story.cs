@@ -25,8 +25,9 @@ public class Story : MonoBehaviour {
 
     void OpeningScene() {
         time = Time.time - startTime;
+        text.fontSize = 50;
 
-        if(time > 5f) text.text = "Greetings. I'm John and I welcome you to Smart Labs. We're currently located in one of our remote testing sites and you're trying out our latest simulation on schizophrenic symptoms for a horror game we're working on. It's still a prototype, so we need to test out a bunch of features with a select few for our next iteration.";
+        if (time > 5f) text.text = "Greetings. I'm John and I welcome you to Smart Labs. We're currently located in one of our remote testing sites and you're trying out our latest simulation on schizophrenic symptoms for a horror game we're working on. It's still a prototype, so we need to test out a bunch of features with a select few for our next iteration.";
         if(time > 17.5f) text.text = "Anyway, that's enough with introductions. I know you're eager to dive in already. Give me a second to boot up the simulation, this won't take too long. ";
         if(time > 22.5f) text.text = "Now, while you're on the way there, I guess I should talk to you first about schizophrenia, since this is a simulation.";
         if(time > 27.5f) text.text = "I'm sure you're well aware that patients afflicted by schizophrenia have problems understanding reality. Sometimes, they see things that aren't really there, and that scares them. Other times, they start believing false things, like them being hunted by a secret society. What most people seem to forget is that they're people who are suffering, just like people with appendicitis or cancer.";

@@ -30,8 +30,8 @@ public class WindowTrigger : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         //FOR VR
-        //if(playerEntered && (RightHandInput.windowActivate || LeftHandInput.windowActivate)) {
-        if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
+        if(playerEntered && (RightHandInput.windowActivate || LeftHandInput.windowActivate)) {
+        //if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
             float minPosX = gameObject.transform.position.x + 5f;
             float maxPosX = gameObject.transform.position.x - 5f;
             float minPosY = gameObject.transform.position.y + 5f;

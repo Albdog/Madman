@@ -14,11 +14,12 @@ public class FadeManager : MonoBehaviour {
     private float duration;
     private float startTime;
     private bool beeContact = false;
-    private bool shadowContact = false;
+    private bool shadowContact = false; 
     private float time;
     private int count = 0;
     private ShadowPositioner shadow;
     private FirstPersonController fps;
+    private SchizoBarManager schizoBar;
 
     private bool hasDisabledShadow;
 
@@ -48,7 +49,6 @@ public class FadeManager : MonoBehaviour {
                     WindowTrigger.totalBees--;
                 }
 
-                SchizoBarManager schizoBar;
                 if (schizoBar = this.GetComponent<SchizoBarManager>())
                 {
                     schizoBar.ChangeSchizoLevel(5);

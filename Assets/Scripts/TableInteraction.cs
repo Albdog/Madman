@@ -39,8 +39,8 @@ public class TableInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //FOR VR
-        //if(playerEntered && (RightHandInput.tableActivate || LeftHandInput.tableActivate)) {
-        if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
+        if(playerEntered && (RightHandInput.tableActivate || LeftHandInput.tableActivate)) {
+        //if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
             boxCollider.center = new Vector3(-0.005496f, -0.042708f, -0.103295f);
             boxCollider.size = new Vector3(1.391395f, 1.497191f, 1.032544f);
             

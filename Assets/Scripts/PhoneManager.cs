@@ -22,7 +22,7 @@ public class PhoneManager : MonoBehaviour {
 	void Update () {
 
 
-        if(!MainSwitchInteraction.isDisabled) {
+        if(MainSwitchInteraction.isDisabled) {
             text.text =
             "Outside - " + outsideFBcount + "/2\n" +
             "Left Wing - " + leftWingFBCount + "/3\n" +

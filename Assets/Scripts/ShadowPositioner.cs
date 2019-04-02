@@ -25,7 +25,7 @@ public class ShadowPositioner : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         schizoBarManager = player.GetComponent<SchizoBarManager>();
-        fps = player.GetComponent<FirstPersonController>();
+        //fps = player.GetComponent<FirstPersonController>();
         isColliding = false;
         isPlayerOutside = true;
         isShadowOutside = true;
@@ -39,11 +39,17 @@ public class ShadowPositioner : MonoBehaviour
     {
         transform.LookAt(player.transform);
         CheckIfPlayerIsOutside();
-        if (fps.enabledShadowMovement && !hasStarted)
+        //if (fps.enabledShadowMovement && !hasStarted)
+        //{
+        //    StartCoroutine(UpdatePosition());
+        //    hasStarted = true;
+        //}
+        if ( !hasStarted)
         {
             StartCoroutine(UpdatePosition());
             hasStarted = true;
         }
+        
     }
     
     private IEnumerator UpdatePosition()

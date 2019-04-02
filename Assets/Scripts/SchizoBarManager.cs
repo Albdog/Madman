@@ -10,14 +10,14 @@ public class SchizoBarManager : MonoBehaviour {
     private float currentSchizoLevel;
     public float maxSchizoLevel;
 
-    public void ChangeSchizoLevel(int amount) {
+    public void ChangeSchizoLevel(float amount) {
         currentSchizoLevel += amount;
         currentSchizoLevel = Mathf.Clamp(currentSchizoLevel, 0, maxSchizoLevel);
 
         schizoFill.value = currentSchizoLevel / maxSchizoLevel;
     }
 
-    public float getSchizoLevel ()
+    public float GetSchizoLevel ()
     {
         return currentSchizoLevel;
     }
