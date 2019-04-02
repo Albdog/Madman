@@ -9,16 +9,28 @@ public class ShadowPositioner : MonoBehaviour
     private SchizoBarManager schizoBarManager;
     private FirstPersonController fps;
 
-    [SerializeField] public float[] updateFrequencies;
-    [SerializeField] public float[] teleportRanges;
-    [SerializeField] public float[] protectiveRanges;
-    [SerializeField] public BoxCollider[] schoolColliders;
-    [SerializeField] public float[] levelHeights;
+    [SerializeField] private float timeBeforeActivation;
+    [SerializeField] private BoxCollider[] schoolColliders;
+
+    private Vector2 updateFrequencies;
+    private Vector2 teleportRanges;
+    private Vector2 protectiveRanges;
+
+    private float currentTime;
     private bool isColliding;
     private bool isPlayerOutside;
     private bool isShadowOutside;
     private bool hasStarted;
     private bool enableMovement;
+
+    private static class SVR
+    {
+        public static Vector2 c_uf = new Vector2(25f, 40f); //updateFrequencies
+        public static Vector2 c_tr = new Vector2(41f, 22.15f); //teleportRange
+        public static Vector2 c_pr = new Vector2(20f, 13.15f); //protectiveRange
+        public static float protectiveLimit = 6f;
+        public static float updateFreqMax = 5f;
+    }
 
     // Use this for initialization
     void Awake()
@@ -31,7 +43,11 @@ public class ShadowPositioner : MonoBehaviour
         isShadowOutside = true;
         hasStarted = false;
         enableMovement = true;
+        currentTime = 0;
         //weightedRandomizer = new WeightedRandomizer();
+        updateFrequencies = SVR.c_uf;
+        teleportRanges = SVR.c_tr;
+        protectiveRanges = SVR.c_pr;
     }
 
     // Update is called once per frame
@@ -39,17 +55,33 @@ public class ShadowPositioner : MonoBehaviour
     {
         transform.LookAt(player.transform);
         CheckIfPlayerIsOutside();
+        UpdatePositionerValues(schizoBarManager.GetSchizoLevel());
         //if (fps.enabledShadowMovement && !hasStarted)
         //{
         //    StartCoroutine(UpdatePosition());
         //    hasStarted = true;
         //}
-        if ( !hasStarted)
+        if ( !hasStarted )
         {
-            StartCoroutine(UpdatePosition());
-            hasStarted = true;
-        }
-        
+            //wait timeBeforeActivation seconds before starting positioner
+            currentTime += Time.deltaTime;
+            if ( currentTime > timeBeforeActivation)
+            {
+                StartCoroutine(UpdatePosition());
+                hasStarted = true;
+            }
+        }       
+    }
+
+    private void UpdatePositionerValues(float schizoLevel)
+    {
+        float schizoLerp = schizoLevel / 100f;
+        updateFrequencies = new Vector2(Mathf.Lerp(SVR.c_uf.x, SVR.updateFreqMax, schizoLerp), 
+            Mathf.Lerp(SVR.c_uf.y, SVR.updateFreqMax, schizoLerp));
+        teleportRanges = new Vector2(Mathf.Lerp(SVR.c_tr.x, 0, schizoLerp),
+            Mathf.Lerp(SVR.c_tr.y, 0, schizoLerp));
+        protectiveRanges = new Vector2(Mathf.Lerp(SVR.c_pr.x, SVR.protectiveLimit, schizoLerp), 
+            Mathf.Lerp(SVR.c_pr.y, SVR.protectiveLimit, schizoLerp));
     }
     
     private IEnumerator UpdatePosition()
@@ -66,12 +98,7 @@ public class ShadowPositioner : MonoBehaviour
                     CheckIfShadowIsOutside();
                 } while (isColliding || (isPlayerOutside != isShadowOutside));
 
-                //dont do it when isColliding || 
-                //TODO
-                //Obscure shadow from view before moving
-
                 yield return new WaitForSeconds(updateFrequencies[isPlayerOutside ? 0 : 1]);
-                //yield return new WaitForSeconds(3.0f);
             }
         }
     }
@@ -87,7 +114,6 @@ public class ShadowPositioner : MonoBehaviour
         playerPos.z + Random.Range(protectiveRanges[isPlayerOutside ? 0 : 1], teleportRanges[isPlayerOutside ? 0 : 1]) * ((Random.Range(0, 2) == 0) ? 1 : -1)
         );
     }
-
 
     void CheckIfPlayerIsOutside()
     {
@@ -149,40 +175,4 @@ public class ShadowPositioner : MonoBehaviour
     {
         isColliding = false;
     }
-
-    /*
-     * Only helper functions below. :--)
-     
-    private class Option
-    {
-        private int chance;
-        private string name;
-
-        public Option(string x, int y)
-        {
-            name = x;
-            chance = y;
-        }
-
-        public string getName() { return name; }
-        public void setName(string newName) { name = newName; }
-        public int getChance() { return chance; }
-        public void setChance(int newChance) { chance = newChance; }
-    }
-
-    private class WeightedRandomizer
-    {
-        public void updateWeights (float currentSchizoLevel)
-        {
-            //TODO set adjusting weights algo
-        }
-
-        public string Randomize(Option[] options)
-        {
-            int randomInt = Random.Range(0, 101);
-
-            return "x";
-        }
-    }
-    */
 }

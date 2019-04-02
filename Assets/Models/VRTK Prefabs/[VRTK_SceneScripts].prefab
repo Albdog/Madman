@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114077864077299578}
   m_Layer: 0
   m_Name: Either Controller - X Axis Slide - Y Axis Slide
-  m_TagString: Untagged
+  m_TagString: PlayerSpeedContainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

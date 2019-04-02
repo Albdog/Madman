@@ -15,6 +15,7 @@ TagManager:
   - Right Wing Fuse Box
   - Middle Building Fuse Box
   - Shadow
+  - PlayerSpeedContainer
   layers:
   - Default
   - TransparentFX
