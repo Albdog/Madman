@@ -33,6 +33,7 @@ public class FadeManager : MonoBehaviour {
         //fps = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
         playerUtilities = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerUtilities>();
         headsetFade = FindObjectOfType<VRTK_HeadsetFade>();
+        schizoBar = GameObject.FindGameObjectWithTag("Player").GetComponent<SchizoBarManager>();
         hasDisabledShadow = false;
         hasTeleportedPlayer = false;
     }
@@ -85,7 +86,7 @@ public class FadeManager : MonoBehaviour {
                     hasTeleportedPlayer = true;
                 }
             }
-            else if (time == 1f)
+            else if (time > 1f)
             {
                 playerUtilities.DisableMovement();
                 headsetFade.Fade(Color.black, 0.2f);
