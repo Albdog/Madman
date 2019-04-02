@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1490084172004378}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.15, y: 0, z: -28.676575}
+  m_LocalPosition: {x: -55.79924, y: -30, z: -59.9}
   m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
   m_Children:
   - {fileID: 4628839616693218}
@@ -314,15 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0bdb1cdd5e85c047a76740bb666ac97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateFrequencies:
-  - 3
-  - 3
-  teleportRanges:
-  - 41
-  - 22.15
-  protectiveRanges:
-  - 20
-  - 13.15
+  timeBeforeActivation: 90
   schoolColliders:
   - {fileID: 0}
   - {fileID: 0}
@@ -331,11 +323,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  levelHeights:
-  - 1.8368
-  - 8.6401
-  - 15.44
-  - 22.24
 --- !u!198 &198390553597871684
 ParticleSystem:
   m_ObjectHideFlags: 1
