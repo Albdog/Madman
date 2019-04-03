@@ -25,7 +25,7 @@ public class SchizoBarManager : MonoBehaviour {
     void Update() {
         if(currentSchizoLevel >= maxSchizoLevel) {
             GameState.isGameOver = true;
-            GameState.isGameOver = false;
+            GameState.isWin = false;
             SceneManager.LoadScene(0);
         }
     }

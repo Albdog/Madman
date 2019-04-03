@@ -16,6 +16,8 @@ TagManager:
   - Middle Building Fuse Box
   - Shadow
   - PlayerSpeedContainer
+  - PlayerContainer
+  - Terrain
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,6 @@ public class Story : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameState.isGameOver = false;
         startTime = Time.time;
         scientist = gameObject.GetComponent<AudioSource>();
         isPlayingOS = new bool[openingScene.Length];

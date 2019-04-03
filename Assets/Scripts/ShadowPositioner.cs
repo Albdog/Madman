@@ -175,7 +175,7 @@ public class ShadowPositioner : MonoBehaviour
         isColliding = true;
     }
 
-    void OnCollisionExit()
+    void OnCollisionExit(Collision other)
     {
         isColliding = false;
     }
