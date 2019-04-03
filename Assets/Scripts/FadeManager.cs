@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using VRTK;
+using UnityEngine.SceneManagement;
 
 public class FadeManager : MonoBehaviour {
     public static FadeManager Instance { set; get; }
@@ -27,7 +28,7 @@ public class FadeManager : MonoBehaviour {
 
     void Start() {
         Instance = this;
-        shadow = GameObject.FindGameObjectWithTag("Shadow").GetComponent<ShadowPositioner>();
+        if(SceneManager.GetActiveScene().buildIndex == 1) shadow = GameObject.FindGameObjectWithTag("Shadow").GetComponent<ShadowPositioner>();
         fps = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
         headsetFade = FindObjectOfType<VRTK_HeadsetFade>();
         hasDisabledShadow = false;
