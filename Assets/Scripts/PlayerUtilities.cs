@@ -12,8 +12,8 @@ public class PlayerUtilities : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        player = GameObject.FindGameObjectWithTag("PlayerSpeedContainer");
-        playerSpeedControl = player.GetComponents<VRTK_SlideObjectControlAction>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerSpeedControl = GameObject.FindGameObjectWithTag("PlayerSpeedContainer").GetComponents<VRTK_SlideObjectControlAction>();
         isColliding = false;
     }
 	
@@ -24,14 +24,11 @@ public class PlayerUtilities : MonoBehaviour {
 
     void SetNewPosition()
     {
-        //get player position
-        Vector3 playerPos = player.transform.position;
-
         //TODO enable player to spawn in 2nd floor hehe
         player.transform.position = new Vector3(
-        playerPos.x + Random.Range(gameArea.bounds.min.x, gameArea.bounds.max.x),
-        playerPos.y,
-        playerPos.z + Random.Range(gameArea.bounds.min.z, gameArea.bounds.max.z)
+            Random.Range(gameArea.bounds.min.x, gameArea.bounds.max.x),
+            1.9f,
+            Random.Range(gameArea.bounds.min.z, gameArea.bounds.max.z)
         );
     }
 

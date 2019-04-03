@@ -69,7 +69,7 @@ public class FadeManager : MonoBehaviour {
         }
         else if (shadowContact)
         {
-            if (time > 4f)
+            if (time > 4.5f)
             {
                 playerUtilities.EnableMovement();
                 shadow.EnableMovement();
@@ -94,7 +94,7 @@ public class FadeManager : MonoBehaviour {
                 {
                     shadow.DisableMovement();
                     shadow.RemoveFromView();
-                    schizoBar.ChangeSchizoLevel(5);
+                    schizoBar.ChangeSchizoLevel(3.5f);
                 }
             }
         }

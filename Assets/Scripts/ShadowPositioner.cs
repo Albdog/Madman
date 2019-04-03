@@ -53,7 +53,11 @@ public class ShadowPositioner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform);
+        //transform.LookAt(player.transform);
+        var lookPos = player.transform.position - this.transform.position;
+        lookPos.y = 0;
+        this.transform.rotation = Quaternion.LookRotation(lookPos);
+
         CheckIfPlayerIsOutside();
         UpdatePositionerValues(schizoBarManager.GetSchizoLevel());
         //if (fps.enabledShadowMovement && !hasStarted)
