@@ -60,7 +60,7 @@ public class ShadowEffects : MonoBehaviour
         GetNewReferences(); //gets the current value from main profile
         LerpAllValues(lerp); //accepts current lerp value and changes vision accordingly
         UpdateNewReferences(); //sets the values in main profile to new settings
-        Debug.Log(schizoBar.GetSchizoLevel());
+        //Debug.Log(schizoBar.GetSchizoLevel());
     }
 
     //TODO smooth function?

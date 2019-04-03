@@ -15,7 +15,7 @@ public class FuseBoxInteraction : MonoBehaviour {
 	void Update () {
 		if(MainSwitchInteraction.isDisabled) {
             //FOR VR
-            if((LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) { 
+            if(playerEntered && (LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) { 
             //if(playerEntered && Input.GetKeyUp(KeyCode.F) && !isFixed) {
                 switch(gameObject.tag) {
                 case "Outside Fuse Box":

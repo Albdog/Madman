@@ -19,19 +19,24 @@ public class FadeManager : MonoBehaviour {
     private float time;
     private int count = 0;
     private ShadowPositioner shadow;
-    private FirstPersonController fps;
+    //private FirstPersonController fps;
+    private PlayerUtilities playerUtilities;
     private SchizoBarManager schizoBar;
 
     private bool hasDisabledShadow;
+    private bool hasTeleportedPlayer;
 
     private VRTK_HeadsetFade headsetFade;
 
     void Start() {
         Instance = this;
         if(SceneManager.GetActiveScene().buildIndex == 1) shadow = GameObject.FindGameObjectWithTag("Shadow").GetComponent<ShadowPositioner>();
-        fps = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+        //fps = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonController>();
+        playerUtilities = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerUtilities>();
         headsetFade = FindObjectOfType<VRTK_HeadsetFade>();
+        schizoBar = GameObject.FindGameObjectWithTag("Player").GetComponent<SchizoBarManager>();
         hasDisabledShadow = false;
+        hasTeleportedPlayer = false;
     }
 
     void Update() {
@@ -65,26 +70,33 @@ public class FadeManager : MonoBehaviour {
         }
         else if (shadowContact)
         {
-            if (time == 1f)
+            if (time > 4.5f)
             {
-                //set speed to 0 idk how with vr
+                playerUtilities.EnableMovement();
+                shadow.EnableMovement();
+                shadowContact = false;
+                hasDisabledShadow = false;
+                hasTeleportedPlayer = false;
+            }
+            else if (time > 3f)
+            {
+                headsetFade.Unfade(1f);
+                if (!hasTeleportedPlayer)
+                {
+                    playerUtilities.Teleport();
+                    hasTeleportedPlayer = true;
+                }
+            }
+            else if (time > 1f)
+            {
+                playerUtilities.DisableMovement();
                 headsetFade.Fade(Color.black, 0.2f);
                 if (!hasDisabledShadow)
                 {
                     shadow.DisableMovement();
                     shadow.RemoveFromView();
-                    schizoBar.ChangeSchizoLevel(5);
+                    schizoBar.ChangeSchizoLevel(3.5f);
                 }
-            }
-            else if (time > 3f)
-            {
-                headsetFade.Unfade(1f);
-            }
-            else if (time > 4f)
-            {
-                shadow.EnableMovement();
-                shadowContact = false;
-                hasDisabledShadow = false;
             }
         }
     }
