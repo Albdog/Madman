@@ -7,6 +7,7 @@ public class ShadowEffects : MonoBehaviour
     private GameObject player;
     private GameObject shadow;
     private SchizoBarManager schizoBar;
+    private ShadowPositioner shadowPositioner;
 
     private ChromaticAberrationModel.Settings chrome;
     private GrainModel.Settings grain;
@@ -17,7 +18,7 @@ public class ShadowEffects : MonoBehaviour
     //const float MAX_TRANSITION_TIME = 2.0f;
     //private float timer;
     private bool isNearToShadow;
-    private Vector2 damageRange = new Vector2(0.0095f, 0.2f);
+    private Vector2 damageRange = new Vector2(0.007f, 0.175f);
 
     private static class PPVRanges
     {
@@ -36,6 +37,7 @@ public class ShadowEffects : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         shadow = GameObject.FindGameObjectWithTag("Shadow");
         schizoBar = player.GetComponent<SchizoBarManager>();
+        shadowPositioner = shadow.GetComponent<ShadowPositioner>();
         GetNewReferences();
         //isNearToShadow = false;
         //timer = 0;
@@ -48,6 +50,7 @@ public class ShadowEffects : MonoBehaviour
         float lerp = 0; //sets lerp to 0 (case when shadow is out of affected bounds)
         if ( distance < MIN_DISTANCE) //checks if player is close to shadow (case when shadow is in bounds)
         {
+            shadowPositioner.DisableMovement();
             lerp = 1 - (distance / MIN_DISTANCE);
             //Debug.Log(lerp);
             if ( lerp > 0.3f )
@@ -55,6 +58,10 @@ public class ShadowEffects : MonoBehaviour
                 float damageLerp = (lerp - 0.3f) / 0.7f;
                 schizoBar.ChangeSchizoLevel(Mathf.Lerp(damageRange.x, damageRange.y, damageLerp));
             }
+        }
+        else
+        {
+            shadowPositioner.EnableMovement();
         }
 
         GetNewReferences(); //gets the current value from main profile

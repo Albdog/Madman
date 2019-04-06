@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: f5a17e352b8e8df4186dcc8847be66f7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Circle_000
+    100002: Circle_001
+    100004: Circle_002
+    100006: Circle_003
+    100008: //RootNode
+    100010: Plane
+    100012: Plane_001
+    100014: Plane_002
+    100016: Plane_003
+    100018: Plane_004
+    100020: Plane_005
+    400000: Circle_000
+    400002: Circle_001
+    400004: Circle_002
+    400006: Circle_003
+    400008: //RootNode
+    400010: Plane
+    400012: Plane_001
+    400014: Plane_002
+    400016: Plane_003
+    400018: Plane_004
+    400020: Plane_005
+    2100000: Material_001
+    2100002: Material_002
+    2100004: Material
+    2100006: Glossy__Door_COL_png
+    2100008: Door__Door_COL_png
+    2100010: Door_2__Door_COL_png
+    2300000: Circle_000
+    2300002: Circle_001
+    2300004: Circle_002
+    2300006: Circle_003
+    2300008: Plane
+    2300010: Plane_001
+    2300012: Plane_002
+    2300014: Plane_003
+    2300016: Plane_004
+    2300018: Plane_005
+    3300000: Circle_000
+    3300002: Circle_001
+    3300004: Circle_002
+    3300006: Circle_003
+    3300008: Plane
+    3300010: Plane_001
+    3300012: Plane_002
+    3300014: Plane_003
+    3300016: Plane_004
+    3300018: Plane_005
+    4300000: Plane_003
+    4300002: Plane
+    4300004: Plane_005
+    4300006: Plane_004
+    4300008: Plane_002
+    4300010: Plane_001
+    4300012: Circle_003
+    4300014: Circle_000
+    4300016: Circle_001
+    4300018: Circle_002
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

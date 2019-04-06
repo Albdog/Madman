@@ -4,13 +4,37 @@ using System.Collections;
 public class AuditoryHallucinations : MonoBehaviour
 {
     public static AuditoryHallucinations instance;
+    private GameObject player;
+    private SchizoBarManager schizoBar;
 
     public Voice[] baseVoices_m, baseVoices_f, layeredVoices_m, layeredVoices_f;
     public AudioSource[] audioSources;
     private float x_maxDistance;
+    private bool hasStartedBase;
+    private bool hasStartedReverb;
+    private bool hasStartedLayered;
+    private Vector2 baseFreq;
+    private Vector2 reverbFreq;
+    private Vector2 layeredFreq;
+
+    private static class AVR
+    {
+        public static Vector2 b_1 = new Vector2(1.5f, 3.2f); //frequency of base
+        public static Vector2 b_2 = new Vector2(2.5f, 6f); //frequency of base
+        public static Vector2 r_1 = new Vector2(1.7f, 3.7f); //frequency of base
+        public static Vector2 r_2 = new Vector2(3.5f, 6f); //frequency of base
+        public static Vector2 l_1 = new Vector2(5f, 9f); //frequency of base
+        public static Vector2 l_2 = new Vector2(10f, 15f); //frequency of base
+    }
 
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        schizoBar = player.GetComponent<SchizoBarManager>();
+        hasStartedBase = false;
+        hasStartedReverb = false;
+        hasStartedLayered = false;
+
         // singleton
         if (instance != null)
         {
@@ -23,16 +47,27 @@ public class AuditoryHallucinations : MonoBehaviour
         }
 
         InitializeVoices();
-        StartCoroutine(PlayVoices());
     }
 
-    private IEnumerator PlayVoices()
+    private void Update()
     {
-        StartCoroutine(PlayBaseVoice());
-        yield return new WaitForSeconds(UnityEngine.Random.Range(0.2f, 1.0f));
-        StartCoroutine(PlayReverbVoice());
-        yield return new WaitForSeconds(UnityEngine.Random.Range(2.0f, 3.0f));
-        StartCoroutine(PlayLayeredVoice());
+        float schizoLevel = schizoBar.GetSchizoLevel();
+        UpdateFrequencyValues(schizoLevel);
+        if ( !hasStartedBase && schizoLevel > 10f)
+        {
+            StartCoroutine(PlayBaseVoice());
+            hasStartedBase = true;
+        }
+        if (!hasStartedReverb && schizoLevel > 25f)
+        {
+            StartCoroutine(PlayReverbVoice());
+            hasStartedReverb = true;
+        }
+        if (!hasStartedLayered && schizoLevel > 40f)
+        {
+            StartCoroutine(PlayLayeredVoice());
+            hasStartedLayered = true;
+        }
     }
 
     private IEnumerator PlayBaseVoice()
@@ -44,7 +79,7 @@ public class AuditoryHallucinations : MonoBehaviour
             voice.source = audioSources[0];
             voice.source.clip = voice.clip;
             voice.source.Play();
-            yield return new WaitForSeconds(voice.clip.length + UnityEngine.Random.Range(1.0f, 3.0f));
+            yield return new WaitForSeconds(voice.clip.length + UnityEngine.Random.Range(baseFreq.x, baseFreq.y));
         }
     }
 
@@ -57,7 +92,7 @@ public class AuditoryHallucinations : MonoBehaviour
             voice.source = audioSources[1];
             voice.source.clip = voice.clip;
             voice.source.Play();
-            yield return new WaitForSeconds(voice.clip.length + UnityEngine.Random.Range(2.0f, 5.0f));
+            yield return new WaitForSeconds(voice.clip.length + UnityEngine.Random.Range(reverbFreq.x, reverbFreq.y));
         }
     }
 
@@ -69,7 +104,7 @@ public class AuditoryHallucinations : MonoBehaviour
             Voice voice = GetBaseVoice("layered");
             voice.source = audioSources[2];
             voice.source.Play();
-            yield return new WaitForSeconds(voice.clip.length + UnityEngine.Random.Range(5.0f, 9.0f));
+            yield return new WaitForSeconds(voice.clip.length + UnityEngine.Random.Range(layeredFreq.x, layeredFreq.y));
         }
     }
 
@@ -144,5 +179,17 @@ public class AuditoryHallucinations : MonoBehaviour
             UnityEngine.Random.Range(-0.5f, 2.8f),
             UnityEngine.Random.Range(-2.8f, 2.8f));
         audioSources[num].transform.localPosition = newPosition;
+    }
+
+    private void UpdateFrequencyValues(float schizoLevel)
+    {
+        float schizoLerp = schizoLevel / 100f;
+
+        baseFreq = new Vector2(Mathf.Lerp(AVR.b_1.x, AVR.b_2.x, schizoLerp),
+            Mathf.Lerp(AVR.b_1.y, AVR.b_2.y, schizoLerp));
+        reverbFreq = new Vector2(Mathf.Lerp(AVR.r_1.x, AVR.r_2.x, schizoLerp),
+            Mathf.Lerp(AVR.r_1.y, AVR.r_2.y, schizoLerp));
+        layeredFreq = new Vector2(Mathf.Lerp(AVR.l_1.x, AVR.l_2.x, schizoLerp),
+            Mathf.Lerp(AVR.l_1.y, AVR.l_2.y, schizoLerp));
     }
 }

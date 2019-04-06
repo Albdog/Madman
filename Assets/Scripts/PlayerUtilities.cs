@@ -21,14 +21,18 @@ public class PlayerUtilities : MonoBehaviour {
         hasFoundColliders = false;
         teleportSpots = new[]
         {
+            //outside
             new Vector3 (-38.8f, 1.02f, 53.8f),
             new Vector3 (-14.3f, 1.02f, -25.4f),
             new Vector3 (48.1f, 1.02f, -96.6f),
             new Vector3 (43.3f, 1.02f, -189.81f),
             new Vector3 (-76.4f, 1.02f, -189.81f),
-
+            //inside
             new Vector3 (0f, 1.02f, -166.894f),
             new Vector3 (0f, 7.83f, -131.25f),
+            new Vector3 (-4.4f, 1.02f, -130.2f),
+            new Vector3 (153.3f, 1.02f, -16.15f),
+            new Vector3 (77.21f, 1.02f, -7.79f)
         };
     }
 	
