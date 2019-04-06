@@ -15,21 +15,13 @@ public class MainSwitchInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //FOR VR
         if(playerEntered && (LeftHandInput.mainSwitchActivate || RightHandInput.mainSwitchActivate) && (!isDisabled)) isDisabled = true;
 
         if(playerEntered && (LeftHandInput.mainSwitchActivate || RightHandInput.mainSwitchActivate) && GameState.areFuseBoxesFixed) {
             GameState.isGameOver = true;
             GameState.isWin = true;
-        }
-
-        /*if(playerEntered && Input.GetKeyUp(KeyCode.F) && (!isDisabled)) isDisabled = true;
-
-        if(playerEntered && Input.GetKeyUp(KeyCode.F) && GameState.areFuseBoxesFixed) {
-            GameState.isGameOver = true;
-            GameState.isWin = true;
             SceneManager.LoadScene(0);
-        }*/
+        }
     }
 
     void OnTriggerEnter(Collider other) {

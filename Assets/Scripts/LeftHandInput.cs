@@ -13,6 +13,7 @@ public class LeftHandInput : MonoBehaviour {
     public GameObject phone;
 
     private int modelNumber;
+    private SoundEffectsManager sfx;
 
     private bool doorCollide, windowCollide, tableCollide, mainSwitchCollide, fuseBoxCollide;
     public static bool doorActivate, windowActivate, tableActivate, mainSwitchActivate, fuseBoxActivate;
@@ -20,6 +21,7 @@ public class LeftHandInput : MonoBehaviour {
     // Use this for initialization
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
+        sfx = new SoundEffectsManager();
         
         flashlight.SetActive(false);
         phone.SetActive(false);
@@ -107,10 +109,12 @@ public class LeftHandInput : MonoBehaviour {
             leftHand.SetActive(false);
             flashlight.SetActive(true);
             phone.SetActive(false);
+            sfx.PlaySoundEffect("switch flashlight");
         } else if(area == 2) { //phone
             leftHand.SetActive(false);
             flashlight.SetActive(false);
             phone.SetActive(true);
+            sfx.PlaySoundEffect("switch phone");
         }
     }
 }

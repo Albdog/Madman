@@ -9,10 +9,12 @@ public class TableInteraction : MonoBehaviour {
     private bool playerEntered = false;
     private bool moveChair = false;
     private Vector3 original;
+    private SoundEffectsManager sfx;
 
     // Use this for initialization
     void Start () {
         gameObject.tag = "TableAndChair";
+        sfx = new SoundEffectsManager;
 
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.center = new Vector3(-0.005496f, -0.042708f, -0.674008f);
@@ -38,9 +40,7 @@ public class TableInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //FOR VR
         if(playerEntered && (RightHandInput.tableActivate || LeftHandInput.tableActivate)) {
-        //if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
             boxCollider.center = new Vector3(-0.005496f, -0.042708f, -0.103295f);
             boxCollider.size = new Vector3(1.391395f, 1.497191f, 1.032544f);
             
@@ -49,6 +49,7 @@ public class TableInteraction : MonoBehaviour {
 
         if(moveChair) {
             chair.transform.position = Vector3.MoveTowards(chair.transform.position, original, 2.5f * Time.deltaTime);
+            sfx.PlaySoundEffect("fix chair");
 
             if(chair.transform.position == original) moveChair = false;
         }

@@ -5,18 +5,18 @@ using UnityEngine;
 public class FuseBoxInteraction : MonoBehaviour {
 
     private bool isFixed, playerEntered;
+    private SoundEffectsManager sfx;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         isFixed = false;
-	}
+        sfx = new SoundEffectsManager();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		if(MainSwitchInteraction.isDisabled) {
-            //FOR VR
-            if(playerEntered && (LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) { 
-            //if(playerEntered && Input.GetKeyUp(KeyCode.F) && !isFixed) {
+            if(playerEntered && (LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) {
                 switch(gameObject.tag) {
                 case "Outside Fuse Box":
                     if(PhoneManager.outsideFBcount < 2) PhoneManager.outsideFBcount++;
@@ -38,6 +38,7 @@ public class FuseBoxInteraction : MonoBehaviour {
                     break;
                 }
 
+                sfx.PlaySoundEffect("breaker fix");
                 isFixed = true;
             }
         }

@@ -11,10 +11,12 @@ public class WindowTrigger : MonoBehaviour {
     public static int totalBees;
     private Animator windowAnimator;
     private Transform window;
+    private SoundEffectsManager sfx;
 
     // Use this for initialization
     void Start() {
         totalBees = 0;
+        sfx = new SoundEffectsManager();
         windowAnimator = GetComponent<Animator>();
 
         gameObject.tag = "Window";
@@ -26,12 +28,9 @@ public class WindowTrigger : MonoBehaviour {
             }
         }
     }
-
-    // Update is called once per frame
+    
     void Update() {
-        //FOR VR
         if(playerEntered && (RightHandInput.windowActivate || LeftHandInput.windowActivate)) {
-        //if(playerEntered && Input.GetKeyUp(KeyCode.F)) {
             float minPosX = gameObject.transform.position.x + 5f;
             float maxPosX = gameObject.transform.position.x - 5f;
             float minPosY = gameObject.transform.position.y + 5f;
@@ -54,6 +53,7 @@ public class WindowTrigger : MonoBehaviour {
                 totalBees++;
             }
 
+            sfx.PlaySoundEffect("window close");
             windowAnimator.SetBool("isOpen", !windowAnimator.GetBool("isOpen"));
         }
     }
