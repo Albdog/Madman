@@ -3,7 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bee
+  - Door
+  - Window
+  - TableAndChair
+  - Fire
+  - Main Switch
+  - Outside Fuse Box
+  - Left Wing Fuse Box
+  - Right Wing Fuse Box
+  - Middle Building Fuse Box
+  - Shadow
+  - PlayerSpeedContainer
+  - PlayerContainer
+  - Terrain
   layers:
   - Default
   - TransparentFX

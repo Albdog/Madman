@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: 579253686b8407041a7068abe3d551dd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box001.001
+    100002: Box002
+    100004: Box003
+    100006: Box004
+    100008: Box005
+    100010: Box006
+    100012: Box007
+    100014: Box008
+    100016: Box009
+    100018: Box010
+    100020: Box011
+    100022: Box012
+    100024: Box012.001
+    100026: Box013
+    100028: Sphere001
+    100030: //RootNode
+    400000: Box001.001
+    400002: Box002
+    400004: Box003
+    400006: Box004
+    400008: Box005
+    400010: Box006
+    400012: Box007
+    400014: Box008
+    400016: Box009
+    400018: Box010
+    400020: Box011
+    400022: Box012
+    400024: Box012.001
+    400026: Box013
+    400028: Sphere001
+    400030: //RootNode
+    2100000: 'Material #26'
+    2300000: Box001.001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Box005
+    2300010: Box006
+    2300012: Box007
+    2300014: Box008
+    2300016: Box009
+    2300018: Box010
+    2300020: Box011
+    2300022: Box012
+    2300024: Box012.001
+    2300026: Box013
+    2300028: Sphere001
+    3300000: Box001.001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Box005
+    3300010: Box006
+    3300012: Box007
+    3300014: Box008
+    3300016: Box009
+    3300018: Box010
+    3300020: Box011
+    3300022: Box012
+    3300024: Box012.001
+    3300026: Box013
+    3300028: Sphere001
+    4300000: Box012.001
+    4300002: Box011
+    4300004: Box013
+    4300006: Box009
+    4300008: Box007
+    4300010: Box012
+    4300012: Box008
+    4300014: Box005
+    4300016: Box006
+    4300018: Box010
+    4300020: Box003
+    4300022: Box004
+    4300024: Box002
+    4300026: Box001.001
+    4300028: Sphere001
+    7400000: Box012.001|Box001.001|Take 001|BaseLayer
+    7400002: Box012.001|Box002|Take 001|BaseLayer
+    7400004: Box012.001|Box003|Take 001|BaseLayer
+    7400006: Box012.001|Box004|Take 001|BaseLayer
+    7400008: Box012.001|Box005|Take 001|BaseLayer
+    7400010: Box012.001|Box006|Take 001|BaseLayer
+    7400012: Box012.001|Box007|Take 001|BaseLayer
+    7400014: Box012.001|Box008|Take 001|BaseLayer
+    7400016: Box012.001|Box009|Take 001|BaseLayer
+    7400018: Box012.001|Box010|Take 001|BaseLayer
+    7400020: Box012.001|Box011|Take 001|BaseLayer
+    7400022: Box012.001|Box012|Take 001|BaseLayer
+    7400024: Box012.001|Box012|Take 001|BaseLayer.001
+    7400026: Box012.001|Box013|Take 001|BaseLayer
+    7400028: Box012.001|Sphere001|Take 001|BaseLayer
+    7400030: Box011|Box001.001|Take 001|BaseLayer
+    7400032: Box011|Box002|Take 001|BaseLayer
+    7400034: Box011|Box003|Take 001|BaseLayer
+    7400036: Box011|Box004|Take 001|BaseLayer
+    7400038: Box011|Box005|Take 001|BaseLayer
+    7400040: Box011|Box006|Take 001|BaseLayer
+    7400042: Box011|Box007|Take 001|BaseLayer
+    7400044: Box011|Box008|Take 001|BaseLayer
+    7400046: Box011|Box009|Take 001|BaseLayer
+    7400048: Box011|Box010|Take 001|BaseLayer
+    7400050: Box011|Box011|Take 001|BaseLayer
+    7400052: Box011|Box012|Take 001|BaseLayer
+    7400054: Box011|Box012|Take 001|BaseLayer.001
+    7400056: Box011|Box013|Take 001|BaseLayer
+    7400058: Box011|Sphere001|Take 001|BaseLayer
+    7400060: Box013|Box001.001|Take 001|BaseLayer
+    7400062: Box013|Box002|Take 001|BaseLayer
+    7400064: Box013|Box003|Take 001|BaseLayer
+    7400066: Box013|Box004|Take 001|BaseLayer
+    7400068: Box013|Box005|Take 001|BaseLayer
+    7400070: Box013|Box006|Take 001|BaseLayer
+    7400072: Box013|Box007|Take 001|BaseLayer
+    7400074: Box013|Box008|Take 001|BaseLayer
+    7400076: Box013|Box009|Take 001|BaseLayer
+    7400078: Box013|Box010|Take 001|BaseLayer
+    7400080: Box013|Box011|Take 001|BaseLayer
+    7400082: Box013|Box012|Take 001|BaseLayer
+    7400084: Box013|Box012|Take 001|BaseLayer.001
+    7400086: Box013|Box013|Take 001|BaseLayer
+    7400088: Box013|Sphere001|Take 001|BaseLayer
+    7400090: Box009|Box001.001|Take 001|BaseLayer
+    7400092: Box009|Box002|Take 001|BaseLayer
+    7400094: Box009|Box003|Take 001|BaseLayer
+    7400096: Box009|Box004|Take 001|BaseLayer
+    7400098: Box009|Box005|Take 001|BaseLayer
+    7400100: Box009|Box006|Take 001|BaseLayer
+    7400102: Box009|Box007|Take 001|BaseLayer
+    7400104: Box009|Box008|Take 001|BaseLayer
+    7400106: Box009|Box009|Take 001|BaseLayer
+    7400108: Box009|Box010|Take 001|BaseLayer
+    7400110: Box009|Box011|Take 001|BaseLayer
+    7400112: Box009|Box012|Take 001|BaseLayer
+    7400114: Box009|Box012|Take 001|BaseLayer.001
+    7400116: Box009|Box013|Take 001|BaseLayer
+    7400118: Box009|Sphere001|Take 001|BaseLayer
+    7400120: Box007|Box001.001|Take 001|BaseLayer
+    7400122: Box007|Box002|Take 001|BaseLayer
+    7400124: Box007|Box003|Take 001|BaseLayer
+    7400126: Box007|Box004|Take 001|BaseLayer
+    7400128: Box007|Box005|Take 001|BaseLayer
+    7400130: Box007|Box006|Take 001|BaseLayer
+    7400132: Box007|Box007|Take 001|BaseLayer
+    7400134: Box007|Box008|Take 001|BaseLayer
+    7400136: Box007|Box009|Take 001|BaseLayer
+    7400138: Box007|Box010|Take 001|BaseLayer
+    7400140: Box007|Box011|Take 001|BaseLayer
+    7400142: Box007|Box012|Take 001|BaseLayer
+    7400144: Box007|Box012|Take 001|BaseLayer.001
+    7400146: Box007|Box013|Take 001|BaseLayer
+    7400148: Box007|Sphere001|Take 001|BaseLayer
+    7400150: Box012|Box001.001|Take 001|BaseLayer
+    7400152: Box012|Box002|Take 001|BaseLayer
+    7400154: Box012|Box003|Take 001|BaseLayer
+    7400156: Box012|Box004|Take 001|BaseLayer
+    7400158: Box012|Box005|Take 001|BaseLayer
+    7400160: Box012|Box006|Take 001|BaseLayer
+    7400162: Box012|Box007|Take 001|BaseLayer
+    7400164: Box012|Box008|Take 001|BaseLayer
+    7400166: Box012|Box009|Take 001|BaseLayer
+    7400168: Box012|Box010|Take 001|BaseLayer
+    7400170: Box012|Box011|Take 001|BaseLayer
+    7400172: Box012|Box012|Take 001|BaseLayer
+    7400174: Box012|Box012|Take 001|BaseLayer.001
+    7400176: Box012|Box013|Take 001|BaseLayer
+    7400178: Box012|Sphere001|Take 001|BaseLayer
+    7400180: Box008|Box001.001|Take 001|BaseLayer
+    7400182: Box008|Box002|Take 001|BaseLayer
+    7400184: Box008|Box003|Take 001|BaseLayer
+    7400186: Box008|Box004|Take 001|BaseLayer
+    7400188: Box008|Box005|Take 001|BaseLayer
+    7400190: Box008|Box006|Take 001|BaseLayer
+    7400192: Box008|Box007|Take 001|BaseLayer
+    7400194: Box008|Box008|Take 001|BaseLayer
+    7400196: Box008|Box009|Take 001|BaseLayer
+    7400198: Box008|Box010|Take 001|BaseLayer
+    7400200: Box008|Box011|Take 001|BaseLayer
+    7400202: Box008|Box012|Take 001|BaseLayer
+    7400204: Box008|Box012|Take 001|BaseLayer.001
+    7400206: Box008|Box013|Take 001|BaseLayer
+    7400208: Box008|Sphere001|Take 001|BaseLayer
+    7400210: Box005|Box001.001|Take 001|BaseLayer
+    7400212: Box005|Box002|Take 001|BaseLayer
+    7400214: Box005|Box003|Take 001|BaseLayer
+    7400216: Box005|Box004|Take 001|BaseLayer
+    7400218: Box005|Box005|Take 001|BaseLayer
+    7400220: Box005|Box006|Take 001|BaseLayer
+    7400222: Box005|Box007|Take 001|BaseLayer
+    7400224: Box005|Box008|Take 001|BaseLayer
+    7400226: Box005|Box009|Take 001|BaseLayer
+    7400228: Box005|Box010|Take 001|BaseLayer
+    7400230: Box005|Box011|Take 001|BaseLayer
+    7400232: Box005|Box012|Take 001|BaseLayer
+    7400234: Box005|Box012|Take 001|BaseLayer.001
+    7400236: Box005|Box013|Take 001|BaseLayer
+    7400238: Box005|Sphere001|Take 001|BaseLayer
+    7400240: Box006|Box001.001|Take 001|BaseLayer
+    7400242: Box006|Box002|Take 001|BaseLayer
+    7400244: Box006|Box003|Take 001|BaseLayer
+    7400246: Box006|Box004|Take 001|BaseLayer
+    7400248: Box006|Box005|Take 001|BaseLayer
+    7400250: Box006|Box006|Take 001|BaseLayer
+    7400252: Box006|Box007|Take 001|BaseLayer
+    7400254: Box006|Box008|Take 001|BaseLayer
+    7400256: Box006|Box009|Take 001|BaseLayer
+    7400258: Box006|Box010|Take 001|BaseLayer
+    7400260: Box006|Box011|Take 001|BaseLayer
+    7400262: Box006|Box012|Take 001|BaseLayer
+    7400264: Box006|Box012|Take 001|BaseLayer.001
+    7400266: Box006|Box013|Take 001|BaseLayer
+    7400268: Box006|Sphere001|Take 001|BaseLayer
+    7400270: Box010|Box001.001|Take 001|BaseLayer
+    7400272: Box010|Box002|Take 001|BaseLayer
+    7400274: Box010|Box003|Take 001|BaseLayer
+    7400276: Box010|Box004|Take 001|BaseLayer
+    7400278: Box010|Box005|Take 001|BaseLayer
+    7400280: Box010|Box006|Take 001|BaseLayer
+    7400282: Box010|Box007|Take 001|BaseLayer
+    7400284: Box010|Box008|Take 001|BaseLayer
+    7400286: Box010|Box009|Take 001|BaseLayer
+    7400288: Box010|Box010|Take 001|BaseLayer
+    7400290: Box010|Box011|Take 001|BaseLayer
+    7400292: Box010|Box012|Take 001|BaseLayer
+    7400294: Box010|Box012|Take 001|BaseLayer.001
+    7400296: Box010|Box013|Take 001|BaseLayer
+    7400298: Box010|Sphere001|Take 001|BaseLayer
+    7400300: Box003|Box001.001|Take 001|BaseLayer
+    7400302: Box003|Box002|Take 001|BaseLayer
+    7400304: Box003|Box003|Take 001|BaseLayer
+    7400306: Box003|Box004|Take 001|BaseLayer
+    7400308: Box003|Box005|Take 001|BaseLayer
+    7400310: Box003|Box006|Take 001|BaseLayer
+    7400312: Box003|Box007|Take 001|BaseLayer
+    7400314: Box003|Box008|Take 001|BaseLayer
+    7400316: Box003|Box009|Take 001|BaseLayer
+    7400318: Box003|Box010|Take 001|BaseLayer
+    7400320: Box003|Box011|Take 001|BaseLayer
+    7400322: Box003|Box012|Take 001|BaseLayer
+    7400324: Box003|Box012|Take 001|BaseLayer.001
+    7400326: Box003|Box013|Take 001|BaseLayer
+    7400328: Box003|Sphere001|Take 001|BaseLayer
+    7400330: Box004|Box001.001|Take 001|BaseLayer
+    7400332: Box004|Box002|Take 001|BaseLayer
+    7400334: Box004|Box003|Take 001|BaseLayer
+    7400336: Box004|Box004|Take 001|BaseLayer
+    7400338: Box004|Box005|Take 001|BaseLayer
+    7400340: Box004|Box006|Take 001|BaseLayer
+    7400342: Box004|Box007|Take 001|BaseLayer
+    7400344: Box004|Box008|Take 001|BaseLayer
+    7400346: Box004|Box009|Take 001|BaseLayer
+    7400348: Box004|Box010|Take 001|BaseLayer
+    7400350: Box004|Box011|Take 001|BaseLayer
+    7400352: Box004|Box012|Take 001|BaseLayer
+    7400354: Box004|Box012|Take 001|BaseLayer.001
+    7400356: Box004|Box013|Take 001|BaseLayer
+    7400358: Box004|Sphere001|Take 001|BaseLayer
+    7400360: Box002|Box001.001|Take 001|BaseLayer
+    7400362: Box002|Box002|Take 001|BaseLayer
+    7400364: Box002|Box003|Take 001|BaseLayer
+    7400366: Box002|Box004|Take 001|BaseLayer
+    7400368: Box002|Box005|Take 001|BaseLayer
+    7400370: Box002|Box006|Take 001|BaseLayer
+    7400372: Box002|Box007|Take 001|BaseLayer
+    7400374: Box002|Box008|Take 001|BaseLayer
+    7400376: Box002|Box009|Take 001|BaseLayer
+    7400378: Box002|Box010|Take 001|BaseLayer
+    7400380: Box002|Box011|Take 001|BaseLayer
+    7400382: Box002|Box012|Take 001|BaseLayer
+    7400384: Box002|Box012|Take 001|BaseLayer.001
+    7400386: Box002|Box013|Take 001|BaseLayer
+    7400388: Box002|Sphere001|Take 001|BaseLayer
+    7400390: Box001.001|Box001.001|Take 001|BaseLayer
+    7400392: Box001.001|Box002|Take 001|BaseLayer
+    7400394: Box001.001|Box003|Take 001|BaseLayer
+    7400396: Box001.001|Box004|Take 001|BaseLayer
+    7400398: Box001.001|Box005|Take 001|BaseLayer
+    7400400: Box001.001|Box006|Take 001|BaseLayer
+    7400402: Box001.001|Box007|Take 001|BaseLayer
+    7400404: Box001.001|Box008|Take 001|BaseLayer
+    7400406: Box001.001|Box009|Take 001|BaseLayer
+    7400408: Box001.001|Box010|Take 001|BaseLayer
+    7400410: Box001.001|Box011|Take 001|BaseLayer
+    7400412: Box001.001|Box012|Take 001|BaseLayer
+    7400414: Box001.001|Box012|Take 001|BaseLayer.001
+    7400416: Box001.001|Box013|Take 001|BaseLayer
+    7400418: Box001.001|Sphere001|Take 001|BaseLayer
+    7400420: Sphere001|Box001.001|Take 001|BaseLayer
+    7400422: Sphere001|Box002|Take 001|BaseLayer
+    7400424: Sphere001|Box003|Take 001|BaseLayer
+    7400426: Sphere001|Box004|Take 001|BaseLayer
+    7400428: Sphere001|Box005|Take 001|BaseLayer
+    7400430: Sphere001|Box006|Take 001|BaseLayer
+    7400432: Sphere001|Box007|Take 001|BaseLayer
+    7400434: Sphere001|Box008|Take 001|BaseLayer
+    7400436: Sphere001|Box009|Take 001|BaseLayer
+    7400438: Sphere001|Box010|Take 001|BaseLayer
+    7400440: Sphere001|Box011|Take 001|BaseLayer
+    7400442: Sphere001|Box012|Take 001|BaseLayer
+    7400444: Sphere001|Box012|Take 001|BaseLayer.001
+    7400446: Sphere001|Box013|Take 001|BaseLayer
+    7400448: Sphere001|Sphere001|Take 001|BaseLayer
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

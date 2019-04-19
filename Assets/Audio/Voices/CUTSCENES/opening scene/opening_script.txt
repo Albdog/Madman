@@ -1,0 +1,9 @@
+Greetings. I welcome you to Smart Labs. We're currently located in one of our remote testing sites and you're trying out our latest simulation on schizophrenic symptoms for a horror game we're working on. It's still a prototype, so we need to test out a bunch of features with a select few for our next iteration.
+
+Now, while our devices are still booting up, I guess I should talk to you first about schizophrenia, since this is a simulation.
+
+I'm sure you're well aware that patients with schizophrenia have trouble understanding reality. Sometimes, they see things that aren't really there, and that scares them. Other times, they start believing false things, like them being hunted by a secret society. What most people seem to forget is that they are people who are suffering, just like people with appendicitis or cancer. 
+
+Patients with schizophrenia experience positive and negative symptoms. Positive symptoms include hallucinations, delusions, formal thought disorders, abnormal motor behavior, and excessive or distorted bodily functions, which distorts one's sense of reality. On the other hand, negative symptoms include alogia, affective flattening, anhedonia, and anosgnosia, which essentially makes a person function regressively. It is important to understand that not all patients have the same symptoms. What you'll be experiencing in this simulation is merely a small set of the positive symptoms a person with schizophrenia may experience. 
+
+Now, patients with schizophrenia also have other symptoms that affect their way of thinking, but these are hard to simulate without directly messing with your brain. So don't worry, you'll be fine after this. As for the scary stuff... well, you'll know when you see it. Don't worry, they can't hurt you.
