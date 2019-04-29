@@ -53,18 +53,15 @@ public class AuditoryHallucinations : MonoBehaviour
     {
         float schizoLevel = schizoBar.GetSchizoLevel();
         UpdateFrequencyValues(schizoLevel);
-        if ( !hasStartedBase && schizoLevel > 10f)
-        {
+        if(!hasStartedBase && schizoLevel > 10f) {
             StartCoroutine(PlayBaseVoice());
             hasStartedBase = true;
         }
-        if (!hasStartedReverb && schizoLevel > 25f)
-        {
+        if(!hasStartedReverb && schizoLevel > 25f) {
             StartCoroutine(PlayReverbVoice());
             hasStartedReverb = true;
         }
-        if (!hasStartedLayered && schizoLevel > 40f)
-        {
+        if(!hasStartedLayered && schizoLevel > 40f) {
             StartCoroutine(PlayLayeredVoice());
             hasStartedLayered = true;
         }

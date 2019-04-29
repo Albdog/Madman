@@ -18,6 +18,7 @@ TagManager:
   - PlayerSpeedContainer
   - PlayerContainer
   - Terrain
+  - SoundEffects
   layers:
   - Default
   - TransparentFX

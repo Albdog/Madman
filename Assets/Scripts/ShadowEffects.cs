@@ -14,6 +14,8 @@ public class ShadowEffects : MonoBehaviour
     private MotionBlurModel.Settings blur;
     private ColorGradingModel.Settings color;
 
+    private AudioSource audioSource;
+
     const float MIN_DISTANCE = 18f;
     //const float MAX_TRANSITION_TIME = 2.0f;
     //private float timer;
@@ -34,6 +36,7 @@ public class ShadowEffects : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         shadow = GameObject.FindGameObjectWithTag("Shadow");
         schizoBar = player.GetComponent<SchizoBarManager>();
@@ -46,21 +49,19 @@ public class ShadowEffects : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(player.transform.position, shadow.transform.position);
-        
+
         float lerp = 0; //sets lerp to 0 (case when shadow is out of affected bounds)
-        if ( distance < MIN_DISTANCE) //checks if player is close to shadow (case when shadow is in bounds)
+        if(distance < MIN_DISTANCE) //checks if player is close to shadow (case when shadow is in bounds)
         {
             shadowPositioner.DisableMovement();
             lerp = 1 - (distance / MIN_DISTANCE);
             //Debug.Log(lerp);
-            if ( lerp > 0.3f )
-            {
+            if(lerp > 0.3f) {
                 float damageLerp = (lerp - 0.3f) / 0.7f;
                 schizoBar.ChangeSchizoLevel(Mathf.Lerp(damageRange.x, damageRange.y, damageLerp));
             }
         }
-        else
-        {
+        else {
             shadowPositioner.EnableMovement();
         }
 
@@ -84,6 +85,8 @@ public class ShadowEffects : MonoBehaviour
         grain.size = Mathf.Lerp(PPVRanges.grainSize.x, PPVRanges.grainSize.y, lerp);
         blur.shutterAngle = Mathf.Lerp(PPVRanges.motionAngle.x, PPVRanges.motionAngle.y, lerp);
         blur.frameBlending = Mathf.Lerp(PPVRanges.frameBlending.x, PPVRanges.frameBlending.y, lerp);
+
+        audioSource.volume = Mathf.Lerp(0f, 0.16f, lerp);
     }
 
     private void GetNewReferences()

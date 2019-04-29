@@ -12,7 +12,7 @@ public class DoorTrigger : MonoBehaviour {
     void Start() {
         doorAnimator = GetComponent<Animator>();
         boxColllider = GetComponent<BoxCollider>();
-        sfx = new SoundEffectsManager();
+        sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffectsManager>();
     }
     
     void Update() {

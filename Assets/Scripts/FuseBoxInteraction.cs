@@ -10,7 +10,7 @@ public class FuseBoxInteraction : MonoBehaviour {
     // Use this for initialization
     void Start () {
         isFixed = false;
-        sfx = new SoundEffectsManager();
+        sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffectsManager>();
     }
 	
 	// Update is called once per frame
@@ -19,19 +19,19 @@ public class FuseBoxInteraction : MonoBehaviour {
             if(playerEntered && (LeftHandInput.fuseBoxActivate || RightHandInput.fuseBoxActivate) && !isFixed) {
                 switch(gameObject.tag) {
                 case "Outside Fuse Box":
-                    if(PhoneManager.outsideFBcount < 2) PhoneManager.outsideFBcount++;
+                    if(PhoneManager.outsideFBcount < 2 && !isFixed) PhoneManager.outsideFBcount++;
                     else PhoneManager.outsideFBcount = 2;
                     break;
                 case "Middle Building Fuse Box":
-                    if(PhoneManager.middleBuildingFBcount < 2) PhoneManager.middleBuildingFBcount++;
+                    if(PhoneManager.middleBuildingFBcount < 2 && !isFixed) PhoneManager.middleBuildingFBcount++;
                     else PhoneManager.middleBuildingFBcount = 2;
                     break;
                 case "Left Wing Fuse Box":
-                    if(PhoneManager.leftWingFBCount < 3) PhoneManager.leftWingFBCount++;
+                    if(PhoneManager.leftWingFBCount < 3 && !isFixed) PhoneManager.leftWingFBCount++;
                     else PhoneManager.leftWingFBCount = 3;
                     break;
                 case "Right Wing Fuse Box":
-                    if(PhoneManager.rightWingFBCount < 2) PhoneManager.rightWingFBCount++;
+                    if(PhoneManager.rightWingFBCount < 2 && !isFixed) PhoneManager.rightWingFBCount++;
                     else PhoneManager.rightWingFBCount = 2;
                     break;
                 default:
