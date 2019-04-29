@@ -7,7 +7,7 @@ public class ShadowPositioner : MonoBehaviour
 
     private GameObject player;
     private SchizoBarManager schizoBarManager;
-    private FirstPersonController fps;
+    //private FirstPersonController fps;
 
     [SerializeField] private float timeBeforeActivation;
     [SerializeField] private BoxCollider[] schoolColliders;
@@ -95,15 +95,17 @@ public class ShadowPositioner : MonoBehaviour
             if (enableMovement)
             {
                 //update its position
-                do
-                {
+                //do
+                //{
                     SetNewPosition();
                     CheckIfPlayerIsOutside();
                     CheckIfShadowIsOutside();
-                } while (isColliding || (isPlayerOutside != isShadowOutside));
+                //} while (isColliding || (isPlayerOutside != isShadowOutside));
 
-                yield return new WaitForSeconds(updateFrequencies[isPlayerOutside ? 0 : 1]);
+                
             }
+
+            yield return new WaitForSeconds(updateFrequencies[isPlayerOutside ? 0 : 1]);
         }
     }
 

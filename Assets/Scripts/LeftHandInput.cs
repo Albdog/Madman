@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using UnityEngine.SceneManagement;
 
 public class LeftHandInput : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class LeftHandInput : MonoBehaviour {
     // Use this for initialization
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        sfx = new SoundEffectsManager();
+        if(SceneManager.GetActiveScene().buildIndex == 1) sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffectsManager>();
         
         flashlight.SetActive(false);
         phone.SetActive(false);

@@ -16,8 +16,9 @@ public class WindowTrigger : MonoBehaviour {
     // Use this for initialization
     void Start() {
         totalBees = 0;
-        sfx = new SoundEffectsManager();
+        sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffectsManager>();
         windowAnimator = GetComponent<Animator>();
+        windowAnimator.SetBool("isOpen", true);
 
         gameObject.tag = "Window";
 
@@ -30,7 +31,7 @@ public class WindowTrigger : MonoBehaviour {
     }
     
     void Update() {
-        if(playerEntered && (RightHandInput.windowActivate || LeftHandInput.windowActivate)) {
+        if(playerEntered && (RightHandInput.windowActivate || LeftHandInput.windowActivate) && windowAnimator.GetBool("isOpen")) {
             float minPosX = gameObject.transform.position.x + 5f;
             float maxPosX = gameObject.transform.position.x - 5f;
             float minPosY = gameObject.transform.position.y + 5f;
@@ -54,7 +55,7 @@ public class WindowTrigger : MonoBehaviour {
             }
 
             sfx.PlaySoundEffect("window close");
-            windowAnimator.SetBool("isOpen", !windowAnimator.GetBool("isOpen"));
+            windowAnimator.SetBool("isOpen", false);
         }
     }
 

@@ -14,7 +14,7 @@ public class TableInteraction : MonoBehaviour {
     // Use this for initialization
     void Start () {
         gameObject.tag = "TableAndChair";
-        sfx = new SoundEffectsManager;
+        sfx = GameObject.FindGameObjectWithTag("SoundEffects").GetComponent<SoundEffectsManager>();
 
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.center = new Vector3(-0.005496f, -0.042708f, -0.674008f);
